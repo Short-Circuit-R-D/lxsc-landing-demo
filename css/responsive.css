@@ -2,3 +2,29 @@
 @media (max-width:860px){nav{display:none}header .btn{margin-inline-start:auto}.path,.two{grid-template-columns:1fr;gap:28px}
 .stage{order:-1;top:calc(70px + env(safe-area-inset-top,0px));z-index:3}.path .col{padding-inline-start:28px}.path .col article{min-height:34vh;padding-bottom:40px}.path .col article::before{inset-inline-start:-36px}.stage{padding:12px}.fan.in .s1{transform:translateX(-90px) rotate(-9deg)}.fan.in .s3{transform:translateX(90px) rotate(9deg)}
 .hero::after{background:linear-gradient(180deg,var(--bg) 25%,color-mix(in srgb,var(--bg) 50%,transparent))}}
+
+/* Mobile and tablet refinements */
+@media (max-width:860px){
+header .w{gap:12px}
+header .btn{padding:10px 16px;font-size:15px}
+section{padding:56px 0}
+.final{padding:72px 0}
+.sub{font-size:17px}
+.hero{min-height:auto;padding:56px 0 64px}
+.hero p{margin:20px 0 28px}
+.hero .cta{flex-direction:column}
+.hero .cta .btn{text-align:center}
+.btn.big{padding:14px 22px;font-size:16px}
+.path{margin-top:32px;gap:24px}
+.stage{padding:10px;top:calc(72px + env(safe-area-inset-top,0px));box-shadow:0 10px 24px color-mix(in srgb,var(--bg) 85%,transparent)}
+.stage svg{height:30vh;width:100%}
+.path .col article{min-height:36vh;padding-bottom:32px}
+.fan{height:340px}
+.sheet{width:170px;height:240px;margin-left:-85px;padding:12px}
+.sheet .im{height:60px}
+.fan.in .s1{transform:translateX(-70px) rotate(-9deg)}.fan.in .s3{transform:translateX(70px) rotate(9deg)}
+.vcard{padding:14px}
+.list>div{padding:16px 0}
+.ph{padding-top:48px}
+}
+@media (max-width:420px){.w{padding:0 18px}h1{font-size:38px}}
