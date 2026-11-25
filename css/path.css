@@ -1,0 +1,37 @@
+/* Section basics + "Four steps" guided path and its animated stage */
+/* sections */
+section{padding:clamp(72px,9vw,128px) 0}
+h2{font-size:clamp(30px,3.8vw,46px);font-weight:500;letter-spacing:-.025em;line-height:1.12;max-width:20ch;text-wrap:balance}
+.sub{color:var(--mute);margin:16px 0 0;max-width:52ch;font-size:18px}
+.path{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,88px);align-items:start;margin-top:clamp(40px,6vw,72px)}
+.path .col{padding-inline-start:40px;border-inline-start:2px solid var(--line)}
+.path .col article{position:relative;min-height:44vh;padding:6px 0 56px;opacity:.35;transition:opacity .4s}
+.path .col article:last-child{min-height:0;padding-bottom:0}
+.path .col article::before{content:"";position:absolute;inset-inline-start:-48px;top:10px;width:14px;height:14px;border-radius:50%;background:var(--bg);border:2px solid var(--line);transition:background .3s,border-color .3s,transform .3s}
+.path article.on::before{background:var(--orange);border-color:var(--orange);transform:scale(1.25)}
+.path article.on{opacity:1}
+.path h3{font-size:clamp(22px,2.4vw,28px);font-weight:500;letter-spacing:-.015em;line-height:1.25;margin-bottom:12px}
+.path p{color:var(--mute);max-width:42ch}
+.path .n{font:500 13px var(--mono);color:var(--red);margin-bottom:10px}
+:root[data-theme="dark"] .path .n{color:var(--orange)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .path .n{color:var(--orange)}}
+.stage{position:sticky;top:calc(104px + env(safe-area-inset-top,0px));align-self:start;background:var(--surf);border:1px solid var(--line);border-radius:16px;padding:20px;height:fit-content}
+.stage svg{width:100%;display:block}
+.sc{opacity:0;transition:opacity .5s}
+.stage[data-a="0"] .s0,.stage[data-a="1"] .s1,.stage[data-a="2"] .s2,.stage[data-a="3"] .s3{opacity:1}
+.tx{font:500 13px var(--sans);fill:var(--ink)}.tm{font:400 12px var(--mono);fill:var(--mute)}
+.ln{fill:none;stroke:var(--ink);stroke-width:3;stroke-linejoin:round}.tr{fill:var(--bg);stroke:var(--line);stroke-width:2}
+.stage[data-a="0"] .draw{animation:draw 1.8s ease forwards}
+.draw{stroke-dasharray:900;stroke-dashoffset:900}
+@keyframes draw{to{stroke-dashoffset:0}}
+.bar{transform-box:fill-box;transform-origin:left;transform:scaleX(0)}
+.stage[data-a="1"] .bar{animation:fill 1.2s cubic-bezier(.2,.7,.2,1) forwards}
+.stage[data-a="1"] .b2{animation-delay:.25s}.stage[data-a="1"] .b3{animation-delay:.5s}
+@keyframes fill{to{transform:scaleX(1)}}
+.cone{transform-box:fill-box;transform-origin:top;transform:scaleY(0)}
+.stage[data-a="2"] .cone{animation:grow 1.2s .2s cubic-bezier(.2,.7,.2,1) forwards}
+@keyframes grow{to{transform:scaleY(1)}}
+.tick{stroke-dasharray:40;stroke-dashoffset:40}
+.stage[data-a="3"] .tick{animation:draw2 .6s forwards}
+.stage[data-a="3"] .t2{animation-delay:.4s}.stage[data-a="3"] .t3{animation-delay:.8s}
+@keyframes draw2{to{stroke-dashoffset:0}}

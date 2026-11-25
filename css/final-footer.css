@@ -1,0 +1,5 @@
+/* Final call to action and footer */
+/* final */
+.final{text-align:center;padding:clamp(96px,12vw,160px) 0}.final h2{margin:0 auto 32px;max-width:14ch;font-size:clamp(34px,6vw,72px)}
+.sweep{height:6px;background:var(--grad);width:0;margin:56px auto 0;transition:width 1.6s cubic-bezier(.2,.7,.2,1)}.sweep.in{width:min(560px,80%)}
+footer{padding:36px 0;font-size:14px;color:var(--mute)}footer .w{display:flex;flex-wrap:wrap;gap:12px 28px}footer a{text-decoration:none}footer .r{margin-inline-start:auto}

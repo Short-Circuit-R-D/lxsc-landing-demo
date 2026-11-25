@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>LuxScale Studio – light the room before you build it</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" href="assets/logo/favicon.svg">
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/header.css">
+<link rel="stylesheet" href="css/hero.css">
+<link rel="stylesheet" href="css/path.css">
+<link rel="stylesheet" href="css/fixtures.css">
+<link rel="stylesheet" href="css/reports.css">
+<link rel="stylesheet" href="css/final-footer.css">
+<link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="css/motion.css">
+</head>
+<body>
+<header><div class="w">
+<a class="logo" href="#top" aria-label="LuxScale home">
+<img class="logo-light" src="assets/logo/lxscale_logo_light.svg" alt="lxscale">
+<img class="logo-dark" src="assets/logo/lxscale_logo_dark.svg" alt="" aria-hidden="true">
+</a>
+<nav aria-label="Main"><a href="#path" data-i18n="nav.path">Guided path</a><a href="#fixtures" data-i18n="nav.fix">Your fixtures</a><a href="#reports" data-i18n="nav.rep">Reports</a><a href="guides/getting-started.html" data-i18n="nav.guides">Guides</a></nav>
+<button id="theme" aria-label="Toggle theme">◐</button>
+<a class="btn" href="https://studio.lxscale.com/projects" data-studio data-i18n="cta.open">Open Studio</a>
+</div></header>
+<main id="top">
+<div class="hero"><canvas id="cv" aria-hidden="true"></canvas><div class="w">
+<h1 class="rise" style="animation-delay:.4s" data-i18n="hero.h">Light the room before you build it.</h1>
+<p class="rise" style="animation-delay:.7s" data-i18n="hero.p">Draw it or import your DWG, follow the guided steps, and get a study checked against EN 12464-1.</p>
+<div class="cta rise" style="animation-delay:1s"><a class="btn big" href="https://studio.lxscale.com/projects" data-studio data-i18n="cta.open">Open Studio</a><a class="btn big ghost" href="#path" data-i18n="cta.path">See the guided path</a></div>
+</div></div>
+
+<section id="path"><div class="w">
+<h2 data-i18n="path.h">Four steps from plan to report</h2><p class="sub" data-i18n="path.p">Studio asks one thing at a time, so a first study never starts from a blank screen.</p>
+<div class="path">
+<div class="col">
+<article data-s="0" class="on"><div class="n">Step 1</div><h3>Bring your plan, or type the room</h3><p>Upload a DWG or DXF, let Studio detect the rooms and confirm the unit scale. No drawing? Enter the shape and dimensions by hand.</p></article>
+<article data-s="1"><div class="n">Step 2</div><h3>Follow the standard, or set your own</h3><p>Pick the standard and the targets fill in for you. Designing to your own brief? Set the targets yourself.</p></article>
+<article data-s="2"><div class="n">Step 3</div><h3>Set heights for every fixture</h3><p>Give the ceiling height and the mounting height for each fixture, and place them by hand or let the engine propose a layout.</p></article>
+<article data-s="3"><div class="n">Step 4</div><h3>Review, calculate, report</h3><p>Edit any step, run the calculation, and read the result on the page. Export the same report as a PDF.</p></article>
+</div>
+<div class="stage" data-a="-1" aria-hidden="true"><svg viewBox="0 0 400 300">
+<defs><linearGradient id="gr"><stop offset="0" stop-color="#f47937"/><stop offset=".27" stop-color="#f7de65"/><stop offset=".47" stop-color="#fbf3cf"/><stop offset="1" stop-color="#3ab1d4"/></linearGradient><linearGradient id="gv" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f7de65" stop-opacity=".95"/><stop offset="1" stop-color="#3ab1d4" stop-opacity=".25"/></linearGradient></defs>
+<g class="sc s0"><text class="tm" x="70" y="62">.dwg · .dxf</text><path class="ln draw" d="M70 80H250V150H330V230H70Z"/><text class="tx" x="90" y="190">Rooms detected</text></g>
+<g class="sc s1"><text class="tx" x="70" y="52" style="font-size:16px;font-weight:600">EN 12464-1</text>
+<text class="tx" x="70" y="96">Illuminance</text><rect class="tr" x="70" y="104" width="260" height="14" rx="7"/><rect class="bar" x="70" y="104" width="260" height="14" rx="7" fill="url(#gr)"/>
+<text class="tx" x="70" y="156">Uniformity</text><rect class="tr" x="70" y="164" width="260" height="14" rx="7"/><rect class="bar b2" x="70" y="164" width="260" height="14" rx="7" fill="url(#gr)"/>
+<text class="tx" x="70" y="216">Overdesign cap</text><rect class="tr" x="70" y="224" width="260" height="14" rx="7"/><rect class="bar b3" x="70" y="224" width="260" height="14" rx="7" fill="url(#gr)"/></g>
+<g class="sc s2"><path class="ln" d="M60 40H340M60 260H340" style="stroke-width:2"/><path class="ln" d="M200 40V90" style="stroke-width:2"/><rect x="184" y="90" width="32" height="10" rx="3" fill="#131d20"/><polygon class="cone" points="200,100 120,260 280,260" fill="url(#gv)"/>
+<path class="ln" d="M330 44V256M324 44h12M324 256h12" style="stroke:#c91d26;stroke-width:2"/><text class="tx" x="300" y="150" text-anchor="end">Ceiling height</text><path class="ln" d="M96 100V260" style="stroke:#3ab1d4;stroke-width:2"/><text class="tx" x="86" y="190" text-anchor="end">Mounting</text></g>
+<g class="sc s3"><rect class="tr" x="110" y="30" width="180" height="240" rx="8" style="fill:#fff"/><rect x="110" y="30" width="180" height="26" rx="8" fill="url(#gr)"/>
+<path class="ln tick" d="M135 100l9 9 17-19" style="stroke:#3ab1d4"/><rect x="175" y="96" width="90" height="8" rx="4" fill="#e1d7d0"/>
+<path class="ln tick t2" d="M135 140l9 9 17-19" style="stroke:#3ab1d4"/><rect x="175" y="136" width="70" height="8" rx="4" fill="#e1d7d0"/>
+<path class="ln tick t3" d="M135 180l9 9 17-19" style="stroke:#3ab1d4"/><rect x="175" y="176" width="80" height="8" rx="4" fill="#e1d7d0"/>
+<text class="tm" x="135" y="244" style="fill:#4c7480">On the page · PDF</text></g>
+</svg></div>
+</div></div></section>
+
+<section id="fixtures" class="dark"><div class="w two">
+<div><h2 data-i18n="fix.h">Use your own fixtures</h2><p class="sub">Upload an IES or LDT file and inspect its polar curves before you place a single luminaire: the intensity at every angle from straight down, and the beam angle where it falls to half of its peak. LDT files convert to IES for you.</p>
+<p class="sub">Save the whole study as one .lxsc file. Every IES you used travels inside it, so it reopens on any machine exactly as you left it.</p>
+<div class="chips"><span class="a">.ldt</span><span class="a">.ies</span><span>.lxsc</span></div></div>
+<div class="polar" id="polar" role="img" aria-label="Polar intensity diagram with C0 and C90 curves and the 50% beam angle marked"><svg viewBox="0 0 400 270"><g class="g"><path d="M158.8 48A41.2 41.2 0 0 0 241.2 48"/><path d="M117.5 48A82.5 82.5 0 0 0 282.5 48" stroke-dasharray="3 4"/><path d="M76.2 48A123.8 123.8 0 0 0 323.8 48"/><path d="M35.0 48A165.0 165.0 0 0 0 365.0 48"/><path d="M200 48L35.0 48.0"/><path d="M200 48L57.1 130.5"/><path d="M200 48L117.5 190.9"/><path d="M200 48L200.0 213.0"/><path d="M200 48L282.5 190.9"/><path d="M200 48L342.9 130.5"/><path d="M200 48L365.0 48.0"/></g><text class="pt" x="22.0" y="51.0" text-anchor="middle">90°</text><text class="pt" x="45.8" y="140.0" text-anchor="middle">60°</text><text class="pt" x="111.0" y="205.2" text-anchor="middle">30°</text><text class="pt" x="289.0" y="205.2" text-anchor="middle">30°</text><text class="pt" x="354.2" y="140.0" text-anchor="middle">60°</text><text class="pt" x="378.0" y="51.0" text-anchor="middle">90°</text><text class="pt" x="200" y="235" text-anchor="middle">0° (Nadir)</text><text class="pt" x="12" y="16" style="fill:#f47937">— C0–C180</text><text class="pt" x="92" y="16" style="fill:#3ab1d4">-- C90–C270</text><text class="pt" x="388" y="16" text-anchor="end">I_max</text><path class="c0" pathLength="1" d="M200.0 48.0 L200.0 48.0 L200.0 48.0 L200.0 48.0 L200.0 48.0 L200.0 48.0 L200.0 48.0 L200.0 48.0 L199.9 48.0 L199.9 48.0 L199.8 48.1 L199.6 48.2 L199.3 48.3 L198.9 48.5 L198.4 48.8 L197.8 49.3 L196.9 49.9 L195.8 50.8 L194.5 52.0 L192.9 53.5 L191.1 55.5 L189.0 57.9 L186.7 60.9 L184.1 64.4 L181.4 68.7 L178.6 73.5 L175.7 79.1 L172.8 85.4 L170.0 92.4 L167.5 100.1 L165.2 108.3 L163.3 117.0 L161.9 126.2 L161.0 135.6 L160.7 145.2 L161.1 154.8 L162.3 164.1 L164.1 173.1 L166.7 181.6 L170.0 189.4 L173.9 196.2 L178.3 202.1 L183.3 206.8 L188.7 210.2 L194.3 212.3 L200.0 213.0 L205.7 212.3 L211.3 210.2 L216.7 206.8 L221.7 202.1 L226.1 196.2 L230.0 189.4 L233.3 181.6 L235.9 173.1 L237.7 164.1 L238.9 154.8 L239.3 145.2 L239.0 135.6 L238.1 126.2 L236.7 117.0 L234.8 108.3 L232.5 100.1 L230.0 92.4 L227.2 85.4 L224.3 79.1 L221.4 73.5 L218.6 68.7 L215.9 64.4 L213.3 60.9 L211.0 57.9 L208.9 55.5 L207.1 53.5 L205.5 52.0 L204.2 50.8 L203.1 49.9 L202.2 49.3 L201.6 48.8 L201.1 48.5 L200.7 48.3 L200.4 48.2 L200.2 48.1 L200.1 48.0 L200.1 48.0 L200.0 48.0 L200.0 48.0 L200.0 48.0 L200.0 48.0 L200.0 48.0 L200.0 48.0 L200.0 48.0 L200.0 48.0"/><path class="c90" d="M200.0 48.0 L200.0 48.0 L200.0 48.0 L200.0 48.0 L200.0 48.0 L200.0 48.0 L200.0 48.0 L200.0 48.0 L200.0 48.0 L200.0 48.0 L200.0 48.0 L200.0 48.0 L200.0 48.0 L199.9 48.0 L199.8 48.1 L199.7 48.2 L199.5 48.3 L199.3 48.5 L198.9 48.8 L198.3 49.3 L197.6 50.0 L196.7 51.0 L195.5 52.3 L194.1 54.1 L192.4 56.5 L190.4 59.5 L188.1 63.2 L185.6 67.8 L182.9 73.3 L180.2 79.7 L177.4 87.2 L174.7 95.5 L172.3 104.8 L170.3 114.8 L168.7 125.5 L167.8 136.6 L167.5 147.9 L168.1 159.1 L169.6 170.0 L171.9 180.3 L175.0 189.6 L179.0 197.6 L183.6 204.2 L188.7 209.0 L194.3 212.0 L200.0 213.0 L205.7 212.0 L211.3 209.0 L216.4 204.2 L221.0 197.6 L225.0 189.6 L228.1 180.3 L230.4 170.0 L231.9 159.1 L232.5 147.9 L232.2 136.6 L231.3 125.5 L229.7 114.8 L227.7 104.8 L225.3 95.5 L222.6 87.2 L219.8 79.7 L217.1 73.3 L214.4 67.8 L211.9 63.2 L209.6 59.5 L207.6 56.5 L205.9 54.1 L204.5 52.3 L203.3 51.0 L202.4 50.0 L201.7 49.3 L201.1 48.8 L200.7 48.5 L200.5 48.3 L200.3 48.2 L200.2 48.1 L200.1 48.0 L200.0 48.0 L200.0 48.0 L200.0 48.0 L200.0 48.0 L200.0 48.0 L200.0 48.0 L200.0 48.0 L200.0 48.0 L200.0 48.0 L200.0 48.0 L200.0 48.0 L200.0 48.0 L200.0 48.0"/><g class="bm"><path class="bl" d="M200 48L125.1 195.0M200 48L274.9 195.0"/><path class="ba" d="M162.5 121.5A82.5 82.5 0 0 0 237.5 121.5"/><circle cx="162.5" cy="121.5" r="4.5"/><circle cx="237.5" cy="121.5" r="4.5"/><text class="pt" x="200" y="257" text-anchor="middle" style="fill:#f7de65">Beam angle: between the two points where intensity falls to 50% of I_max</text></g></svg></div>
+</div></section>
+
+<section id="reports"><div class="w two">
+<div class="fan" id="fan" aria-hidden="true"><div class="sheet s1"><div class="hd"></div><div class="gr"><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b></div><i></i><i class="s"></i></div>
+<div class="sheet s3"><div class="hd"></div><i></i><i></i><i class="s"></i><i></i><i></i><i class="s"></i></div>
+<div class="sheet s2"><div class="hd"></div><div class="im"></div><i></i><i></i><i class="s"></i></div></div>
+<div><h2 data-i18n="rep.h">A report you can hand over</h2>
+<div class="list"><div><b>Compare solutions side by side</b><span>Try several layouts for the same room and keep the one that works.</span></div>
+<div><b>Every task plane judged on its own</b><span>A weak area is never hidden behind a good average.</span></div>
+<div><b>Your photos, your sign-off</b><span>Capture canvas views, add images, and put a name on the study.</span></div>
+<div><b>One click to PDF</b><span>The report you read on the page is the report you send.</span></div></div></div>
+</div></section>
+
+<section class="dark final"><div class="w"><h2 data-i18n="end.h">Your room is waiting.</h2><a class="btn big" href="https://studio.lxscale.com/projects" data-studio data-i18n="cta.open">Open Studio</a><div class="sweep" id="sweep"></div></div></section>
+</main>
+<footer><div class="w"><a href="guides/getting-started.html">Guides</a><a href="pages/standards.html">Standards</a><a href="pages/about.html">About</a><a href="pages/contact.html">Contact</a><span class="r">© LuxScale</span></div></footer>
+<script src="js/config.js"></script>
+<script src="js/i18n.js"></script>
+<script src="js/hero-pattern.js"></script>
+<script src="js/guided-path.js"></script>
+<script src="js/reveal.js"></script>
+<script src="js/theme.js"></script>
+</body></html>

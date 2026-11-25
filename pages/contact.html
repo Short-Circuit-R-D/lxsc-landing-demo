@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Contact – LuxScale</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" href="../assets/logo/favicon.svg">
+<link rel="stylesheet" href="../css/tokens.css">
+<link rel="stylesheet" href="../css/base.css">
+<link rel="stylesheet" href="../css/header.css">
+<link rel="stylesheet" href="../css/final-footer.css">
+<link rel="stylesheet" href="../css/pages.css">
+<link rel="stylesheet" href="../css/responsive.css">
+<link rel="stylesheet" href="../css/motion.css">
+</head>
+<body data-base="../" data-page="contact">
+<div id="site-header"></div>
+<main>
+<div class="ph"><div class="w"><h1>Talk to the LuxScale team</h1><p class="lead">Questions about Studio, help with your account, or a request for a demo. Tell us what you need.</p></div></div>
+<div class="pg"><div class="w"><form class="f" id="contact-form">
+<label>Name<input name="name" required autocomplete="name"></label>
+<label>Email<input name="email" type="email" required autocomplete="email"></label>
+<label>Topic<select name="topic"><option>Question about Studio</option><option>Account help</option><option>Request a demo</option><option>Something else</option></select></label>
+<label>Message<textarea name="message" required></textarea></label>
+<button class="btn big" type="submit">Send message</button><p id="form-msg" role="status"></p></form></div></div></main>
+<div id="site-footer"></div>
+<script src="../js/layout.js"></script>
+<script src="../js/config.js"></script>
+<script src="../js/theme.js"></script>
+<script src="../js/contact.js"></script>
+</body></html>

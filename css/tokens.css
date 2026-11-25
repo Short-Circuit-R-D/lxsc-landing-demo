@@ -1,0 +1,6 @@
+/* Brand tokens: colours, gradient, fonts, light/dark themes (source: LuxScale brand sheet) */
+:root{--red:#c91d26;--orange:#f47937;--yellow:#f7de65;--cream:#fbf3cf;--blue:#3ab1d4;--bg:#f5f1ef;--surf:#ebe4e0;--line:#e1d7d0;--ink:#131d20;--mute:#4c7480;
+--grad:linear-gradient(90deg,#f47937 0%,#f7de65 26.5%,#fbf3cf 46.8%,#3ab1d4 100%);
+--sans:"IBM Plex Sans","IBM Plex Sans Arabic",system-ui,sans-serif;--mono:"IBM Plex Mono",ui-monospace,monospace;color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#131d20;--surf:#263a40;--line:#395760;--ink:#f5f1ef;--mute:#a9bcc2;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#131d20;--surf:#263a40;--line:#395760;--ink:#f5f1ef;--mute:#a9bcc2;color-scheme:dark}

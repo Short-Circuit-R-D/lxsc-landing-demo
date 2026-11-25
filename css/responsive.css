@@ -1,0 +1,4 @@
+/* Mobile and tablet rules */
+@media (max-width:860px){nav{display:none}header .btn{margin-inline-start:auto}.path,.two{grid-template-columns:1fr;gap:28px}
+.stage{order:-1;top:calc(70px + env(safe-area-inset-top,0px));z-index:3}.path .col{padding-inline-start:28px}.path .col article{min-height:34vh;padding-bottom:40px}.path .col article::before{inset-inline-start:-36px}.stage{padding:12px}.fan.in .s1{transform:translateX(-90px) rotate(-9deg)}.fan.in .s3{transform:translateX(90px) rotate(9deg)}
+.hero::after{background:linear-gradient(180deg,var(--bg) 25%,color-mix(in srgb,var(--bg) 50%,transparent))}}

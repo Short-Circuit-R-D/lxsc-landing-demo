@@ -1,0 +1,7 @@
+/* Reset, page defaults, layout wrapper */
+*{box-sizing:border-box;margin:0}
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:calc(72px + env(safe-area-inset-top,0px));scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font:400 17px/1.6 var(--sans);overflow-x:hidden}
+a{color:inherit}:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+.w{max-width:1160px;margin:0 auto;padding:0 24px}

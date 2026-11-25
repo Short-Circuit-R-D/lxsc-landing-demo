@@ -1,0 +1,18 @@
+/* Your fixtures section and polar diagram */
+/* fixtures */
+.dark{background:#0e1618;color:#f5f1ef;position:relative}
+.dark::before{content:"";position:absolute;inset:0 0 auto;height:3px;background:var(--grad)}
+.dark .sub{color:#a9bcc2}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,88px);align-items:center}
+.polar{width:100%;background:#1b2a2f;border-radius:14px;padding:12px}
+.polar .c0{fill:rgba(244,121,55,.14);stroke:#f47937;stroke-width:3;stroke-dasharray:1;stroke-dashoffset:1}
+.polar.in .c0{animation:draw2 2s forwards}
+.polar .c90{fill:none;stroke:#3ab1d4;stroke-width:2.5;stroke-dasharray:6 5;opacity:0}
+.polar.in .c90{animation:fade 1s 1.4s forwards}
+.polar .bm{opacity:0}.polar.in .bm{animation:fade 1s 2.2s forwards}
+.polar .bl{stroke:#f7de65;stroke-width:1.5;stroke-dasharray:4 3}.polar .ba{fill:none;stroke:#f7de65;stroke-width:3}.polar .bm circle{fill:#f7de65}
+.polar .g{fill:none;stroke:#395760;stroke-width:1}.polar .pt{font:400 10px var(--mono);fill:#8aa3ab}
+@keyframes fade{to{opacity:1}}
+.chips{display:flex;gap:10px;flex-wrap:wrap;margin-top:26px;font:500 14px var(--mono)}
+.chips span{border:1px solid #395760;border-radius:99px;padding:5px 14px}
+.chips .a{border-color:var(--orange);color:var(--yellow)}

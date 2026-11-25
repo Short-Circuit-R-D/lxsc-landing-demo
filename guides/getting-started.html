@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Quick start – LuxScale</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" href="../assets/logo/favicon.svg">
+<link rel="stylesheet" href="../css/tokens.css">
+<link rel="stylesheet" href="../css/base.css">
+<link rel="stylesheet" href="../css/header.css">
+<link rel="stylesheet" href="../css/final-footer.css">
+<link rel="stylesheet" href="../css/pages.css">
+<link rel="stylesheet" href="../css/responsive.css">
+<link rel="stylesheet" href="../css/motion.css">
+</head>
+<body data-base="../" data-page="quick">
+<div id="site-header"></div>
+<main>
+<div class="ph"><div class="w"><h1>Your first study, step by step</h1><p class="lead">Six steps from sign-in to a report. Studio asks one thing at a time, so you can follow along.</p></div></div>
+<div class="pg"><div class="w"><div class="prose">
+<ul class="glance"><li><a href="#s1">Sign in</a></li><li><a href="#s2">Start a project</a></li><li><a href="#s3">Add the room</a></li><li><a href="#s4">Set targets</a></li><li><a href="#s5">Place fixtures</a></li><li><a href="#s6">Read and report</a></li></ul>
+<ol class="st">
+<li id="s1"><h3>Sign in</h3><p>Studio needs an account. Sign in with your LuxScale account, then open <b>Projects</b> at studio.lxscale.com.</p></li>
+<li id="s2"><h3>Start a project</h3><p>Choose <span class="ui o">NEW PROJECT</span> to start blank, <span class="ui r">WIZARD</span> to be guided with questions, or <span class="ui">IMPORT</span> to open a study you saved earlier.</p></li>
+<li id="s3"><h3>Add the room</h3><p>Upload a DWG or DXF, check the rooms Studio detects, and confirm the unit scale. No drawing? Draw the shape or enter its dimensions by hand.</p><p>Need more rooms? Use <span class="ui">ADD ROOM</span>.</p></li>
+<li id="s4"><h3>Set the room and the targets</h3><p>Enter the ceiling height and the reflectances of the ceiling, walls and floor, plus the maintenance factor. Set the task plane height and its boundary margin.</p><p>Pick the EN 12464-1 activity and the targets fill in. Designing to your own brief? Set the targets yourself.</p></li>
+<li id="s5"><h3>Place the fixtures</h3><p>Upload your IES or LDT files, set the mounting height for each fixture, and place them by hand. Or press <span class="ui o">AUTOMATE</span> and let the engine propose a layout.</p><p>Then press <span class="ui r">CALCULATE ROOM</span>.</p></li>
+<li id="s6"><h3>Read the result and export</h3><p>The results panel shows average, minimum and maximum illuminance, uniformity (U₀) and power density for each task plane. Open the <span class="ui">REPORT</span> tab to see the full report, then <span class="ui">EXPORT</span> it as a PDF. Press <span class="ui">SAVE</span> to keep your work.</p></li>
+</ol>
+<h2>What the statuses mean</h2>
+<div class="dl"><div><b>Passed</b><span>Average illuminance and uniformity meet the targets.</span></div><div><b>Failed</b><span>A target is missed. The message tells you which one and by how much.</span></div><div><b>Not recommended (overcapped)</b><span>The target is met, but the average is above the overdesign cap, so you are using more light than needed.</span></div><div><b>Unconstrained</b><span>Calculated without targets, so there is nothing to pass or fail.</span></div></div>
+<p class="note">Not sure where to start? Press <b>Wizard</b>. It asks about your room, the standard and the heights, then builds the study with you.</p>
+<div class="cta-row"><a class="btn big" data-studio href="https://studio.lxscale.com/projects">Open Studio</a></div></div></div></div></main>
+<div id="site-footer"></div>
+<script src="../js/layout.js"></script>
+<script src="../js/config.js"></script>
+<script src="../js/theme.js"></script>
+</body></html>
