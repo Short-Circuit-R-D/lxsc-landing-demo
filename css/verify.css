@@ -1,0 +1,38 @@
+/* Verify a report: scanner card and result states */
+#verify{background:var(--surf)}
+.vcard{background:var(--bg);border:1px solid var(--line);border-radius:16px;padding:20px;width:100%;max-width:520px;justify-self:end}
+.vview{position:relative;aspect-ratio:4/3;border-radius:10px;overflow:hidden;background:#0e1618;color:#f5f1ef}
+.vview video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:none}
+.vcard[data-state="scan"] video{display:block}
+.vframe{position:absolute;inset:16%;opacity:.55;transition:opacity .3s}
+.vcard[data-state="scan"] .vframe{opacity:1}
+.vframe i{position:absolute;width:26px;height:26px;border:3px solid var(--orange)}
+.vframe i:nth-child(1){top:0;left:0;border-right:0;border-bottom:0}.vframe i:nth-child(2){top:0;right:0;border-left:0;border-bottom:0}
+.vframe i:nth-child(3){bottom:0;left:0;border-right:0;border-top:0}.vframe i:nth-child(4){bottom:0;right:0;border-left:0;border-top:0}
+.vline{position:absolute;left:4%;right:4%;top:0;height:3px;border-radius:2px;background:var(--grad);animation:vscan 2.2s ease-in-out infinite alternate}
+@keyframes vscan{to{top:calc(100% - 3px)}}
+.vhint{position:absolute;inset:auto 0 12px;text-align:center;font-size:14px;color:#a9bcc2}
+.vcard:not([data-state="idle"]):not([data-state="scan"]) :is(.vframe,.vhint){display:none}
+.vres{position:absolute;inset:0;display:none;place-content:center;justify-items:center;text-align:center;gap:8px;padding:20px;background:#0e1618}
+.vcard[data-state="checking"] .r-checking,.vcard[data-state="ok"] .r-ok,.vcard[data-state="locked"] .r-locked,.vcard[data-state="none"] .r-none,.vcard[data-state="err"] .r-err{display:grid;animation:vin .4s ease both}
+@keyframes vin{from{opacity:0;transform:scale(.97)}}
+.vres h3{font-size:22px;font-weight:500}.vres p{color:#a9bcc2;font-size:15px;max-width:30ch}
+.vres svg{width:92px;height:92px}
+.vbadge{font:500 12px var(--mono);padding:3px 12px;border-radius:99px;background:#3ab1d4;color:#131d20}
+.vres .btn{padding:8px 16px;font-size:14px;margin-top:6px}
+.spin{width:54px;height:54px;border-radius:50%;border:4px solid #395760;border-top-color:var(--orange);animation:vspin 1s linear infinite}
+@keyframes vspin{to{transform:rotate(360deg)}}
+.dr{fill:none;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:1;animation:vdraw .7s .1s ease forwards}.dr.d2{animation-delay:.6s}
+@keyframes vdraw{to{stroke-dashoffset:0}}
+.shackle{transform-box:fill-box;transform-origin:left bottom;animation:vlock .7s .2s ease both}
+@keyframes vlock{from{transform:translateY(-8px) rotate(-18deg)}}
+.sad{transform-box:fill-box;transform-origin:50% 100%;animation:vsway 3.2s ease-in-out infinite alternate}
+@keyframes vsway{from{transform:rotate(-4deg)}to{transform:rotate(4deg)}}
+.tear{animation:vtear 2s ease-in infinite}
+@keyframes vtear{0%{transform:translateY(0);opacity:0}15%{opacity:1}100%{transform:translateY(34px);opacity:0}}
+.vctl{display:grid;gap:12px;margin-top:16px}
+.vctl form{display:flex;gap:10px}
+.vctl input{flex:1;min-width:0;font:inherit;padding:12px 14px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink)}
+.vctl button{cursor:pointer;font:inherit;font-weight:600}
+#vmsg{min-height:1.4em;margin-top:10px;font-size:14px;color:var(--mute)}
+@media (max-width:860px){.vcard{justify-self:stretch;max-width:none}}

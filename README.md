@@ -13,6 +13,7 @@ luxscale-site/
 │   ├── path.css          section basics + "Four steps" guided path
 │   ├── fixtures.css      "Use your own fixtures" + polar diagram
 │   ├── reports.css       "A report you can hand over"
+│   ├── verify.css        "Verify a report" scanner card
 │   ├── final-footer.css  closing call to action + footer
 │   ├── responsive.css    mobile / tablet
 │   └── motion.css        reduced-motion rules
@@ -21,6 +22,7 @@ luxscale-site/
 │   ├── i18n.js           language scaffold (English only for now)
 │   ├── hero-pattern.js   static brand pattern in the hero
 │   ├── guided-path.js    scroll-driven steps and stage
+│   ├── verify.js         report scanner, API check, result states
 │   ├── reveal.js         triggers the fixtures, report and closing animations
 │   └── theme.js          light/dark toggle
 ├── assets/
@@ -46,3 +48,5 @@ luxscale-site/
 - **Inner pages** share `js/layout.js` (header and footer, edit links once; works from file://) and `css/pages.css`.
 - **Contact form:** set `contactEmail` or `contactEndpoint` in `js/config.js`; until then the form says it is not connected.
 - The step illustrations and the polar diagram are inline SVG in `index.html`, animated by `css/path.css` and `css/fixtures.css`. The logo is not drawn anywhere.
+
+- **Verify a report:** `js/verify.js` + `js/config.js` (`verify`). It starts in demo mode (`mock:true`: `public-demo`, `private-demo`, any other ID = not found). Set `verify.api`, `verify.reportPage` and `mock:false` for real use. Camera needs HTTPS or localhost.
