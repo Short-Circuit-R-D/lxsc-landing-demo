@@ -10,6 +10,7 @@ window.LX = {
     mock: true,
     api: "",          /* e.g. https://api.lxscale.com/reports/{id} */
     reportPage: "",   /* e.g. https://lxscale.com/report.html?id={id} */
+    signIn: "",       /* optional: where "Sign in to view" goes for private reports ({id} allowed); default = Studio */
     fallbackScript: "" /* optional ZXing script URL for browsers without BarcodeDetector */
   },
   contactEmail: "",     /* fill in: opens the visitor's mail app */

@@ -23,6 +23,7 @@
     if (C.mock) {            /* demo mode: public-demo, private-demo, anything else is not found */
       return new Promise(function (ok) { setTimeout(function () { ok(id === 'public-demo' ? 'public' : id === 'private-demo' ? 'private' : 'none'); }, 800); });
     }
+    if (!C.api) return Promise.reject(new Error('no api'));
     return fetch(C.api.replace('{id}', encodeURIComponent(id)), { headers: { Accept: 'application/json' } }).then(function (r) {
       if (r.status === 404) return 'none';
       if (r.status === 401 || r.status === 403) return 'private';
@@ -40,10 +41,16 @@
     lookup(id).then(function (res) {
       busy = false;
       if (res === 'none') return set('none');
-      if (res === 'private') return set('locked');
+      if (res === 'private') { if (C.signIn) document.getElementById('vsign').href = C.signIn.replace('{id}', encodeURIComponent(id)); return set('locked'); }
+      var enc = encodeURIComponent(id), open = document.getElementById('vopen'), note = document.getElementById('vokmsg');
+      var url = (C.reportPage || '').replace('{id}', enc);
+      if (!/^(https?:\/\/|\/)/.test(url)) {   /* no report page configured: never navigate (an empty link would reload this page) */
+        open.hidden = true;
+        note.textContent = C.mock ? 'Demo mode: set verify.reportPage in js/config.js to open the report.' : 'The report page is not set up yet.';
+        return set('ok');
+      }
+      open.hidden = false; open.href = url; note.textContent = 'Report found. Opening it now…';
       set('ok');
-      var url = C.reportPage.replace('{id}', encodeURIComponent(id));
-      document.getElementById('vopen').href = url;
       setTimeout(function () { if (card.dataset.state === 'ok') location.href = url; }, reduce ? 600 : 1800);
     }).catch(function () { busy = false; set('err'); });
   }

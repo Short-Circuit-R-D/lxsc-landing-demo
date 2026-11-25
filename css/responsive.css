@@ -23,7 +23,7 @@ section{padding:56px 0}
 .sheet{width:170px;height:240px;margin-left:-85px;padding:12px}
 .sheet .im{height:60px}
 .fan.in .s1{transform:translateX(-70px) rotate(-9deg)}.fan.in .s3{transform:translateX(70px) rotate(9deg)}
-.vcard{padding:14px}
+.vcard{padding:14px}.vres{padding:18px 14px;gap:6px}.vres svg{width:68px;height:68px}.vres h3{font-size:20px}
 .list>div{padding:16px 0}
 .ph{padding-top:48px}
 }
