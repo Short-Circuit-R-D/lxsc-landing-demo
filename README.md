@@ -1,5 +1,9 @@
 # LuxScale landing page: native HTML project
 
+**Content source:** all page copy on Home, Features, Standards, Quick start and About is summarized from the LxScale Studio user documentation (quickstart, studio-workspace, tools-*, calculate-automate-reports, projects-and-account, shortcuts-and-troubleshooting). The Verify and Contact pages are site functions with no counterpart in that documentation and were left as they were.
+
+the tool documentation is in (docs)[./docs/]
+
 Open `index.html` in a browser, or serve the folder with any static server. No build step.
 
 ```

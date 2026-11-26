@@ -35,3 +35,19 @@ form.f button{justify-self:start;cursor:pointer;font:inherit}
 .fc h3{font-size:20px;font-weight:600;margin-bottom:8px}.fc p{color:var(--mute);font-size:16px}.fc a{display:inline-block;margin-top:10px;color:var(--ink)}
 .vpage .vcard{justify-self:center;margin:0 auto;max-width:640px}.vpage .vview{aspect-ratio:16/10}
 .vpage .vinfo{margin:56px auto 0}
+
+/* Powered-by card (About) */
+.pb{margin:56px 0 0;padding:28px;border:1px solid var(--line);border-inline-start:4px solid var(--red);border-radius:12px;background:var(--surf)}
+.pb .k{display:block;font:500 12px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--mute);margin-bottom:6px}
+.pb h3{font-size:24px;font-weight:600;margin:0 0 12px}.pb p{margin:0 0 14px;color:var(--ink)}
+.pb a{color:var(--ink);font-weight:500;text-underline-offset:3px}
+
+/* Logo in the empty corner of every inner page header (hidden on small screens) */
+.ph .w{position:relative}
+.ph-logo{position:absolute;inset-inline-end:24px;top:50%;transform:translateY(-50%);pointer-events:none}
+.ph-logo img{height:clamp(110px,15vw,190px);width:auto;display:block}
+.ph-logo .logo-dark{display:none}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .ph-logo .logo-light{display:none}:root:not([data-theme="light"]) .ph-logo .logo-dark{display:block}}
+:root[data-theme="dark"] .ph-logo .logo-light{display:none}:root[data-theme="dark"] .ph-logo .logo-dark{display:block}
+@media (max-width:860px){.ph-logo{display:none}}
+.pb .pb-logo{height:48px;width:auto;margin:0 0 14px}

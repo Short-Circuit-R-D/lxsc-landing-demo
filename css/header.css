@@ -22,3 +22,9 @@ nav a:not(.btn){padding:14px 0;font-size:17px;border-bottom:1px solid var(--line
 .hd-actions{margin-inline-start:auto}
 }
 @media (max-width:520px){.hd-studio{display:none}.nav-studio{display:block;margin-top:18px;text-align:center}}
+
+/* Open Studio buttons: animated brand gradient */
+@keyframes lx-automate-gradient{0%{background-position:0% 50%}100%{background-position:100% 50%}}
+a.btn[data-studio]:not(#vsign){background:linear-gradient(120deg,#f47936,#f7a34d 28%,#3bb0d4 68%,#7ad6dd);background-size:240% 240%;background-position:0% 50%;color:var(--lx-surface);border-color:transparent;animation:lx-automate-gradient 8s ease-in-out infinite alternate;transition:box-shadow .18s ease,transform .18s ease}
+a.btn[data-studio]:not(#vsign):hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(58,177,212,.35)}
+@media (prefers-reduced-motion:reduce){a.btn[data-studio]:not(#vsign){animation:none}}

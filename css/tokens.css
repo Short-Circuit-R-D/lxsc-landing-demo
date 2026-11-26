@@ -4,3 +4,6 @@
 --sans:"IBM Plex Sans","IBM Plex Sans Arabic",system-ui,sans-serif;--mono:"IBM Plex Mono",ui-monospace,monospace;color-scheme:light}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#131d20;--surf:#263a40;--line:#395760;--ink:#f5f1ef;--mute:#a9bcc2;color-scheme:dark}}
 :root[data-theme="dark"]{--bg:#131d20;--surf:#263a40;--line:#395760;--ink:#f5f1ef;--mute:#a9bcc2;color-scheme:dark}
+
+/* Same name as in Studio. Kept dark in both themes so text stays readable on the bright button gradient. */
+:root{--lx-surface:#131d20}
