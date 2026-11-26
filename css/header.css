@@ -1,9 +1,9 @@
 /* Sticky header, logo, navigation, buttons, theme toggle */
 header{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
 header .w{display:flex;align-items:center;gap:26px;height:64px}
-.logo{display:flex;align-items:center;gap:10px;font-weight:500;font-size:22px;text-decoration:none;letter-spacing:-.01em}.logo img{height:34px;width:auto;display:block}
+.logo{display:flex;align-items:center;gap:10px;font-weight:500;font-size:22px;text-decoration:none;letter-spacing:-.01em}.logo img{height:45px;width:auto;display:block}
 nav{display:flex;align-items:center;gap:20px;margin-inline-start:auto;font-size:15px}nav a{text-decoration:none;color:var(--mute)}nav a:hover{color:var(--ink)}
-.btn{display:inline-block;padding:12px 22px;border-radius:6px;font-weight:600;font-size:16px;text-decoration:none;background:var(--orange);color:#131d20;border:1px solid var(--orange);transition:transform .2s,background .2s}
+.btn{display:inline-block;padding:7px 14px;border-radius:6px;font-weight:600;font-size:16px;text-decoration:none;background:var(--orange);color:#131d20;border:1px solid var(--orange);transition:transform .2s,background .2s}
 .btn:hover{background:var(--yellow);border-color:var(--yellow);transform:translateY(-2px)}
 .btn.big{padding:16px 32px;font-size:18px}.btn.ghost{background:none;color:inherit;border-color:currentColor;opacity:.85}
 #lang,#menu,#theme{background:none;border:1px solid var(--line);border-radius:6px;color:var(--ink);width:38px;height:38px;cursor:pointer}

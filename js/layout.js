@@ -16,9 +16,10 @@
     '<button id="theme" type="button" aria-label="Toggle theme">◐</button>' +
     '<a class="btn hd-studio" data-studio href="' + studio + '">Open Studio</a>' +
     '<button id="menu" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav">☰</button></div></div></header>';
-  if (f) f.outerHTML = '<footer><div class="w"><span>© LuxScale</span>' +
-    '<a class="pwr" href="https://shortcircuit.company" aria-label="Short Circuit Company"><span>Powered by</span>' +
-    '<img class="sc-light" src="https://shortcircuit.company/assets/img/logo.svg" alt="" height="26"><img class="sc-dark" src="https://shortcircuit.company/assets/img/logo-dark.svg" alt="" aria-hidden="true" height="26"></a></div></footer>';
+  // if (f) f.outerHTML = '<footer><div class="w"><span>© LuxScale</span>' +
+  //   '<a class="pwr" href="https://shortcircuit.company" aria-label="Short Circuit Company"><span>Powered by</span>' +
+  //   '<img class="sc-light" src="https://shortcircuit.company/assets/img/logo.svg" alt="" height="26"><img class="sc-dark" src="https://shortcircuit.company/assets/img/logo-dark.svg" alt="" aria-hidden="true" height="26"></a></div></footer>';
+  if (f) f.outerHTML = '<footer><div class="w"><span>© LuxScale</span>';
   var pw = document.querySelector('.ph .w');
   if (pw) pw.insertAdjacentHTML('beforeend', '<div class="ph-logo" aria-hidden="true"><img class="logo-light" src="' + b + 'assets/logo/lxscale_logo_light.svg" alt=""><img class="logo-dark" src="' + b + 'assets/logo/lxscale_logo_dark.svg" alt=""></div>');
   var hd = document.getElementById('top-bar'), mb = document.getElementById('menu');
