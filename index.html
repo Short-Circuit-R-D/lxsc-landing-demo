@@ -5,29 +5,37 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>LuxScale Studio – from floor plan to compliance report</title>
 <!-- share-tags -->
-<meta name="description" content="A browser-based lighting design workspace. Draw or import rooms, place luminaires, check results against EN 12464-1 and export a vector PDF report.">
+<meta name="description" content="Browser-based lighting design workspace. Draw or import DXF/DWG rooms, place luminaires, check EN 12464-1 compliance and export a vector PDF report.">
+<meta name="robots" content="index,follow,max-image-preview:large">
 <meta name="theme-color" content="#131d20">
 <link rel="canonical" href="https://lxscale.com/">
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
-
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="LuxScale">
 <meta property="og:title" content="LuxScale Studio – from floor plan to compliance report">
-<meta property="og:description" content="A browser-based lighting design workspace. Draw or import rooms, place luminaires, check results against EN 12464-1 and export a vector PDF report.">
+<meta property="og:description" content="Browser-based lighting design workspace. Draw or import DXF/DWG rooms, place luminaires, check EN 12464-1 compliance and export a vector PDF report.">
 <meta property="og:url" content="https://lxscale.com/">
 <meta property="og:image" content="https://lxscale.com/assets/img/og-image.png">
+<meta property="og:image:secure_url" content="https://lxscale.com/assets/img/og-image.png">
+<meta property="og:image:type" content="image/png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="LuxScale logo">
+<meta property="og:logo" content="https://lxscale.com/assets/logo/lxscale_logo_light.svg">
 <meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ar_AR">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="LuxScale Studio – from floor plan to compliance report">
-<meta name="twitter:description" content="A browser-based lighting design workspace. Draw or import rooms, place luminaires, check results against EN 12464-1 and export a vector PDF report.">
+<meta name="twitter:description" content="Browser-based lighting design workspace. Draw or import DXF/DWG rooms, place luminaires, check EN 12464-1 compliance and export a vector PDF report.">
 <meta name="twitter:image" content="https://lxscale.com/assets/img/og-image.png">
+<meta name="twitter:image:alt" content="LuxScale logo">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"LuxScale","url":"https://lxscale.com/","logo":"https://lxscale.com/assets/logo/lxscale_logo_light.svg"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"LuxScale Studio","url":"https://lxscale.com/","inLanguage":["en","ar"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"LuxScale Studio","applicationCategory":"DesignApplication","operatingSystem":"Web browser","url":"https://lxscale.com/","image":"https://lxscale.com/assets/img/og-image.png","description":"Browser-based lighting design workspace: draw or import rooms, place luminaires, check EN 12464-1 compliance and export a vector PDF report."}</script>
 <!-- /share-tags -->
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="icon" href="assets/logo/favicon.svg">
+<link rel="icon" type="image/svg+xml" href="assets/logo/favicon.svg">
 <link rel="stylesheet" href="css/tokens.css">
 <link rel="stylesheet" href="css/base.css">
 <link rel="stylesheet" href="css/header.css">
@@ -47,7 +55,8 @@
 <div class="hero"><canvas id="cv" aria-hidden="true"></canvas><div class="w">
 <h1 class="rise" style="animation-delay:.4s">From floor plan to compliance report.</h1>
 <p class="rise" style="animation-delay:.7s">Draw or import your rooms, place luminaires, check the results against EN 12464-1 and export a vector PDF report, all in your browser.</p>
-<div class="cta rise" style="animation-delay:1s"><a class="btn big" href="#path">Learn more</a></div>
+<div class="cta rise" style="animation-delay:1s"><a class="btn big" data-signup href="https://studio.lxscale.com/login">Create account</a><a class="btn big ghost" href="#path">Learn more</a></div>
+<div class="cta-note rise" style="animation-delay:1.2s">Already have an account? <a data-login href="https://studio.lxscale.com/login">Sign in</a> with Short Circuit.</div>
 </div></div>
 
 <section id="path" class="scrolly" style="--n:4"><div class="sk"><div class="w">
@@ -90,7 +99,7 @@
 <div class="list"><div><b>Compare alternatives on one canvas</b><span>Each room can hold several design solutions side by side, every one with its own luminaires and results.</span></div><div><b>Every workplane judged on its own</b><span>Each workplane gets its own illuminance, uniformity and a clear Passed, Not recommended or Failed verdict.</span></div><div><b>Logo, images and sign-off</b><span>Add a project logo, a cover image, canvas snapshots, a Markdown description and a consultant signature block.</span></div><div><b>Vector PDF in one click</b><span>Choose A4, Letter or A3 in portrait or landscape and export selectable text with crisp polar charts.</span></div></div></div>
 </div></section>
 
-<section class="dark final"><div class="w"><h2 data-i18n="end.h">Ready to light your first room?</h2><a class="btn big" href="https://studio.lxscale.com/projects" data-studio data-i18n="cta.open">Open Studio</a><div class="sweep" id="sweep"></div></div></section>
+<section class="dark final"><div class="w"><h2 data-i18n="end.h">Ready to light your first room?</h2><div class="cta-row"><a class="btn big" data-signup href="https://studio.lxscale.com/login">Create account</a><a class="btn big ghost" data-login href="https://studio.lxscale.com/login">Sign in</a></div><div class="sweep" id="sweep"></div></div></section>
 </main>
 <div id="site-footer"></div>
 <script src="js/layout.js"></script>

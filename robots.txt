@@ -1,0 +1,8 @@
+# LuxScale marketing site: https://lxscale.com
+# Everything public is open to crawlers. Keep css/ and js/ crawlable so pages render for search engines.
+# The Studio app lives on studio.lxscale.com and has its own robots.txt.
+
+User-agent: *
+Allow: /
+
+Sitemap: https://lxscale.com/sitemap.xml

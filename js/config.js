@@ -2,6 +2,11 @@
    Wizard / calculation API endpoints can be added here later. */
 window.LX = {
   studioUrl: "https://studio.lxscale.com/projects",
+  /* Account buttons (header, hero, closing section, page footers).
+     Studio signs in with Short Circuit SSO at /login. If Short Circuit has a separate
+     sign-up page, put its address in signupUrl; until then Create account uses the same SSO page. */
+  loginUrl: "https://studio.lxscale.com/login",
+  signupUrl: "",
   api: { wizard: "" },
   /* Report verification (section "Verify a report").
      api / reportPage use {id}. Set mock:false once api is real.
@@ -17,3 +22,5 @@ window.LX = {
   contactEndpoint: ""   /* or a URL that accepts a JSON POST */
 };
 document.querySelectorAll("[data-studio]").forEach(function (a) { a.href = window.LX.studioUrl; });
+document.querySelectorAll("[data-login]").forEach(function (a) { a.href = window.LX.loginUrl; });
+document.querySelectorAll("[data-signup]").forEach(function (a) { a.href = window.LX.signupUrl || window.LX.loginUrl; });

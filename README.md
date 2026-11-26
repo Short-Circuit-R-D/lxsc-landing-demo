@@ -52,8 +52,9 @@ luxscale-site/
 
 Called **Open Graph** tags. They are inside `<!-- share-tags -->` in the head of every page.
 
-- Put the preview image at `assets/img/og-image.png`: **1200 × 630 px**, under 300 KB (WhatsApp ignores heavy images). It is the logo on a plain brand background.
-- Put a 180 × 180 px `assets/img/apple-touch-icon.png` for phone home screens.
+- `assets/img/og-image.png` (1200 × 630 px, about 35 KB) is the logo on the brand background, made from `assets/logo/lxscale_logo_dark.svg`. Messengers do not accept SVG as a preview image, so the PNG is what `og:image` and `twitter:image` use. Regenerate it if the logo changes.
+- `assets/img/apple-touch-icon.png` (180 × 180 px) is the logo mark for phone home screens; `assets/logo/favicon.svg` is the mark cropped from the logo.
+- The logo path itself is also declared in every page: `og:logo` and the Organization `logo` in the JSON-LD on the home page both point to `assets/logo/lxscale_logo_light.svg`.
 - The tags assume the site lives at `https://lxscale.com/`. If the domain differs, replace it in every page.
 - Messengers cache previews. After changing them, refresh with Facebook's Sharing Debugger; WhatsApp may take a while or need a link with `?v=2`.
 
@@ -62,3 +63,15 @@ Called **Open Graph** tags. They are inside `<!-- share-tags -->` in the head of
 - The header (links, EN/AR button, theme, menu on phones) is built once in `js/layout.js`. Add a page by adding one line to its `nav` list.
 - Every page loads `js/lang-ar.js` and `js/i18n.js`. To translate new text, add `"English text": "النص العربي"` to `js/lang-ar.js` (the key is the exact English text on the page). Untranslated text stays in English.
 - Studio button names (NEW PROJECT, WIZARD, ...) stay in English on purpose because that is how they appear in Studio.
+
+## Sign in and Create account
+
+- Buttons: header (**Sign in** link + **Create account** button; both move into the menu on narrow phones), hero, closing section on Home, and a closing band on Features, Quick start, Standards and About (built in `js/layout.js`).
+- Addresses are set once in `js/config.js`: `loginUrl` (Studio sign-in, Short Circuit SSO) and `signupUrl`. Leave `signupUrl` empty to send **Create account** to the same SSO page, or set it if Short Circuit has a separate registration page.
+- Any link with `data-login` or `data-signup` picks its address from `config.js`.
+
+## SEO files
+
+- `robots.txt` allows all crawlers and points to the sitemap. `sitemap.xml` lists the 7 public pages (404 is `noindex` and left out). Update `lastmod` when a page changes, and add new pages to it.
+- Every page has `robots`, canonical, Open Graph, Twitter and JSON-LD (Organization, WebSite and SoftwareApplication on Home; breadcrumbs on inner pages) inside `<!-- share-tags -->`. Titles and descriptions use the wording of the LxScale Studio docs (EN 12464-1, Quickstart Lighting Study, Calculate Room, Overdesign Cap, .ies/.ldt).
+- After deploying, submit `https://lxscale.com/sitemap.xml` in Google Search Console and Bing Webmaster Tools.
