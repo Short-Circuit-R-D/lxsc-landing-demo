@@ -66,7 +66,7 @@ Called **Open Graph** tags. They are inside `<!-- share-tags -->` in the head of
 
 ## Sign in and Create account
 
-- Buttons: header (**Sign in** link + **Create account** button; both move into the menu on narrow phones), hero, closing section on Home, and a closing band on Features, Quick start, Standards and About (built in `js/layout.js`).
+- Only on the **Quick start** page, under step 1 (Sign in). Header, hero and closing sections keep the **Open Studio** button.
 - Addresses are set once in `js/config.js`: `loginUrl` (Studio sign-in, Short Circuit SSO) and `signupUrl`. Leave `signupUrl` empty to send **Create account** to the same SSO page, or set it if Short Circuit has a separate registration page.
 - Any link with `data-login` or `data-signup` picks its address from `config.js`.
 

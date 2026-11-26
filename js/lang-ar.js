@@ -1,8 +1,6 @@
 /* Arabic (Modern Standard) strings, keyed by the English text. Used by js/i18n.js */
 window.LX_AR = {
 "Create account": "إنشاء حساب",
-"Already have an account? Sign in with Short Circuit.": "لديك حساب بالفعل؟ <a data-login href=\"https://studio.lxscale.com/login\">سجّل الدخول</a> عبر Short Circuit.",
-"Sign in with your Short Circuit account, then let the Quickstart wizard set up your first study in minutes.": "سجّل الدخول بحساب Short Circuit، ثم دع معالج Quickstart يجهّز دراستك الأولى خلال دقائق.",
 "Features": "المزايا",
 "Quick start": "بداية سريعة",
 "Standards": "المعايير",
