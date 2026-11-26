@@ -21,18 +21,14 @@
     return /^[A-Za-z0-9_-]{1,64}$/.test(v) ? v : '';
   }
   function lookup(id) {
-    if (C.mock) {            /* demo mode: public-demo, private-demo, anything else is not found */
-      return new Promise(function (ok) { setTimeout(function () { ok(id === 'public-demo' ? 'public' : id === 'private-demo' ? 'private' : 'none'); }, 800); });
+    if (C.mock) {            /* demo mode: public-demo is found, anything else is not found */
+      return new Promise(function (ok) { setTimeout(function () { ok(id === 'public-demo' ? 'found' : 'none'); }, 800); });
     }
     if (!C.api) return Promise.reject(new Error('no api'));
     return fetch(C.api.replace('{id}', encodeURIComponent(id)), { headers: { Accept: 'application/json' } }).then(function (r) {
-      if (r.status === 404) return 'none';
-      if (r.status === 401 || r.status === 403) return 'private';
+      if (r.status === 404) return 'none';        /* only two answers: found or not found */
       if (!r.ok) throw new Error('bad status');
-      return r.json().then(function (j) {
-        var v = j.visibility || (j.is_public === true || j.public === true ? 'public' : 'private');
-        return v === 'public' ? 'public' : 'private';   /* anything unclear is treated as private */
-      });
+      return 'found';
     });
   }
   function check(raw) {
@@ -42,7 +38,6 @@
     lookup(id).then(function (res) {
       busy = false;
       if (res === 'none') return set('none');
-      if (res === 'private') { if (C.signIn) document.getElementById('vsign').href = C.signIn.replace('{id}', encodeURIComponent(id)); return set('locked'); }
       var enc = encodeURIComponent(id), open = document.getElementById('vopen'), note = document.getElementById('vokmsg');
       var url = (C.reportPage || '').replace('{id}', enc);
       if (!/^(https?:\/\/|\/)/.test(url)) {   /* no report page configured: never navigate (an empty link would reload this page) */

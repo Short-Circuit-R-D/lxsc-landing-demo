@@ -46,7 +46,7 @@ luxscale-site/
 - **Contact form:** set `contactEmail` or `contactEndpoint` in `js/config.js`; until then the form says it is not connected.
 - The step illustrations and the polar diagram are inline SVG in `index.html`, animated by `css/path.css` and `css/fixtures.css`. The logo is not drawn anywhere.
 
-- **Verify a report:** `js/verify.js` + `js/config.js` (`verify`). It starts in demo mode (`mock:true`: `public-demo`, `private-demo`, any other ID = not found). Set `verify.api`, `verify.reportPage` and `mock:false` for real use. Camera needs HTTPS or localhost.
+- **Verify a report:** `js/verify.js` + `js/config.js` (`verify`). A report has only two outcomes: **Validated** (with an **Open report** button) or **Report not found** (plus a "could not check" message if the service does not answer). It starts in demo mode (`mock:true`: `public-demo` = found, any other ID = not found). Set `verify.api`, `verify.reportPage` and `mock:false` for real use. Camera needs HTTPS or localhost.
 
 ## Link preview (WhatsApp, Facebook, X, LinkedIn)
 
@@ -75,3 +75,8 @@ Called **Open Graph** tags. They are inside `<!-- share-tags -->` in the head of
 - `robots.txt` allows all crawlers and points to the sitemap. `sitemap.xml` lists the 7 public pages (404 is `noindex` and left out). Update `lastmod` when a page changes, and add new pages to it.
 - Every page has `robots`, canonical, Open Graph, Twitter and JSON-LD (Organization, WebSite and SoftwareApplication on Home; breadcrumbs on inner pages) inside `<!-- share-tags -->`. Titles and descriptions use the wording of the LxScale Studio docs (EN 12464-1, Quickstart Lighting Study, Calculate Room, Overdesign Cap, .ies/.ldt).
 - After deploying, submit `https://lxscale.com/sitemap.xml` in Google Search Console and Bing Webmaster Tools.
+
+## Social fan button (About page)
+
+- `js/social.js` + styles at the end of `css/pages.css`. The toggle opens Facebook, X and LinkedIn around itself; Esc or a click outside closes it.
+- Set the profile addresses in `js/config.js` under `social` (`facebook`, `x`, `linkedin`). Until then the three buttons open but do nothing.

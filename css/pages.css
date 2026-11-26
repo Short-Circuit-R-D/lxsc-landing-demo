@@ -51,3 +51,22 @@ form.f button{justify-self:start;cursor:pointer;font:inherit}
 :root[data-theme="dark"] .ph-logo .logo-light{display:none}:root[data-theme="dark"] .ph-logo .logo-dark{display:block}
 @media (max-width:860px){.ph-logo{display:none}}
 .pb .pb-logo{height:48px;width:auto;margin:0 0 14px}
+
+/* Social fan button (About): toggle in the middle, three links open around it */
+.follow{display:flex;align-items:center;gap:28px;flex-wrap:wrap;margin-top:48px}
+.follow-t h3{font-size:22px;font-weight:500}.follow-t p{color:var(--mute);margin-top:6px;max-width:34ch}
+.social{position:relative;width:180px;height:180px;flex:none}
+.social .sc-toggle,.social .sc-btn{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);border-radius:50%;display:grid;place-items:center;cursor:pointer;text-decoration:none}
+.social .sc-toggle{width:55px;height:55px;z-index:5;background:var(--orange);color:#fff;border:2px solid var(--orange);transition:background .4s,color .4s}
+.social .sc-toggle:hover,.social .sc-toggle:focus-visible{background:var(--bg);color:var(--orange)}
+.sc-toggle svg{width:24px;height:24px;fill:currentColor;grid-area:1/1;transition:opacity .3s,transform .5s}
+.sc-toggle .i-close{opacity:0;transform:rotate(-90deg)}
+.social.open .i-share{opacity:0;transform:rotate(90deg)}.social.open .i-close{opacity:1;transform:none}
+.social .sc-btn{--c:#3b5998;--fg:#fff;width:50px;height:50px;color:var(--fg);background:var(--c);border:2px solid var(--c);opacity:0;visibility:hidden;
+transition:left .7s cubic-bezier(.2,.7,.2,1),top .7s cubic-bezier(.2,.7,.2,1),opacity .4s,background .25s,color .25s,visibility 0s .7s}
+.social .sc-btn svg{width:22px;height:22px;fill:currentColor}
+.social .sc-btn:hover,.social .sc-btn:focus-visible{background:var(--bg);color:var(--c)}
+.social .s-in{--c:#0077b5}.social .s-x{--c:var(--ink);--fg:var(--bg)}
+.social.open .sc-btn{opacity:1;visibility:visible;transition-delay:0s}
+.social.open .s-fb{left:15%;top:65%}.social.open .s-x{left:85%;top:65%}.social.open .s-in{left:50%;top:12%}
+@media (prefers-reduced-motion:reduce){.sc-btn,.sc-toggle,.sc-toggle svg{transition:none}}

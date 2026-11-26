@@ -14,20 +14,17 @@
 .vhint{position:absolute;inset:auto 0 12px;text-align:center;font-size:14px;color:#a9bcc2}
 .vcard:not([data-state="idle"]):not([data-state="scan"]) :is(.vframe,.vhint){display:none}
 .vres{position:relative;min-height:100%;display:none;place-content:center;justify-items:center;text-align:center;gap:8px;padding:20px;background:#0e1618}
-.vcard[data-state="checking"] .r-checking,.vcard[data-state="ok"] .r-ok,.vcard[data-state="locked"] .r-locked,.vcard[data-state="none"] .r-none,.vcard[data-state="err"] .r-err{display:grid;animation:vin .4s ease both}
+.vcard[data-state="checking"] .r-checking,.vcard[data-state="ok"] .r-ok,.vcard[data-state="none"] .r-none,.vcard[data-state="err"] .r-err{display:grid;animation:vin .4s ease both}
 @keyframes vin{from{opacity:0;transform:scale(.97)}}
 .vres h3{font-size:22px;font-weight:500}.vres p{color:#a9bcc2;font-size:15px;max-width:30ch}
 .vres svg{width:92px;height:92px}
 .vbtns{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:6px}.vbtns .btn,.vres .btn{margin-top:0}
 .vcard:not([data-state="idle"]):not([data-state="scan"]) .vview{aspect-ratio:auto;min-height:300px;display:grid}
-.vbadge{font:500 12px var(--mono);padding:3px 12px;border-radius:99px;background:#3ab1d4;color:#131d20}
 .vres .btn{padding:8px 16px;font-size:14px;margin-top:6px}
 .spin{width:54px;height:54px;border-radius:50%;border:4px solid #395760;border-top-color:var(--orange);animation:vspin 1s linear infinite}
 @keyframes vspin{to{transform:rotate(360deg)}}
 .dr{fill:none;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:1;animation:vdraw .7s .1s ease forwards}.dr.d2{animation-delay:.6s}
 @keyframes vdraw{to{stroke-dashoffset:0}}
-.shackle{transform-box:fill-box;transform-origin:left bottom;animation:vlock .7s .2s ease both}
-@keyframes vlock{from{transform:translateY(-8px) rotate(-18deg)}}
 .sad{transform-box:fill-box;transform-origin:50% 100%;animation:vsway 3.2s ease-in-out infinite alternate}
 @keyframes vsway{from{transform:rotate(-4deg)}to{transform:rotate(4deg)}}
 .tear{animation:vtear 2s ease-in infinite}

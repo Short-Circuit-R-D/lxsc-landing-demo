@@ -10,14 +10,15 @@ window.LX = {
   api: { wizard: "" },
   /* Report verification (section "Verify a report").
      api / reportPage use {id}. Set mock:false once api is real.
-     Assumed API: GET api -> 404 = not found, 401/403 = private, 200 JSON {"visibility":"public"|"private"}. */
+     Assumed API: GET api -> 404 = not found, any 200 = the report exists (Validated + Open report). */
   verify: {
     mock: true,
     api: "",          /* e.g. https://api.lxscale.com/reports/{id} */
     reportPage: "",   /* e.g. https://lxscale.com/report.html?id={id} */
-    signIn: "",       /* optional: where "Sign in to view" goes for private reports ({id} allowed); default = Studio */
     fallbackScript: "" /* optional ZXing script URL for browsers without BarcodeDetector */
   },
+  /* Social links for the About page fan button. Paste the full profile addresses. */
+  social: { facebook: "", linkedin: "", x: "" },
   contactEmail: "",     /* fill in: opens the visitor's mail app */
   contactEndpoint: ""   /* or a URL that accepts a JSON POST */
 };
