@@ -1,0 +1,7 @@
+/* Arabic (right to left) */
+:lang(ar) body{line-height:1.85}
+:lang(ar) *{letter-spacing:0!important}
+:lang(ar) h1,:lang(ar) h2,:lang(ar) h3{line-height:1.35}
+:lang(ar) .sub,:lang(ar) .lead{line-height:1.9}
+[dir="rtl"] .logo,[dir="rtl"] .polar svg,[dir="rtl"] .stage svg{direction:ltr}
+[dir="rtl"] .ui,[dir="rtl"] .chips{direction:ltr}

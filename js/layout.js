@@ -1,17 +1,28 @@
-/* Shared header and footer for inner pages. Works from file:// (no fetch).
+/* Shared header and footer for every page. Works from file:// (no fetch).
    Each page sets <body data-base="../" data-page="contact">. Edit the links here once. */
 (function () {
   var b = document.body.dataset.base || '', cur = document.body.dataset.page || '';
-  var nav = [['guides/getting-started.html', 'Quick start', 'quick'], ['pages/standards.html', 'Standards', 'standards'],
+  var nav = [['pages/features.html', 'Features', 'features'], ['guides/getting-started.html', 'Quick start', 'quick'],
+             ['pages/standards.html', 'Standards', 'standards'], ['pages/verify.html', 'Verify', 'verify'],
              ['pages/about.html', 'About', 'about'], ['pages/contact.html', 'Contact', 'contact']];
   var links = nav.map(function (n) { return '<a href="' + b + n[0] + '"' + (n[2] === cur ? ' aria-current="page"' : '') + '>' + n[1] + '</a>'; }).join('');
+  var studio = 'https://studio.lxscale.com/projects';
   var h = document.getElementById('site-header'), f = document.getElementById('site-footer');
-  if (h) h.outerHTML = '<header><div class="w"><a class="logo" href="' + b + 'index.html" aria-label="LuxScale home">' +
+  if (h) h.outerHTML = '<header id="top-bar"><div class="w"><a class="logo" href="' + b + 'index.html" aria-label="LuxScale home">' +
     '<img class="logo-light" src="' + b + 'assets/logo/lxscale_logo_light.svg" alt="lxscale">' +
     '<img class="logo-dark" src="' + b + 'assets/logo/lxscale_logo_dark.svg" alt="" aria-hidden="true"></a>' +
-    '<nav aria-label="Main">' + links + '</nav><button id="theme" aria-label="Toggle theme">◐</button>' +
-    '<a class="btn" data-studio href="https://studio.lxscale.com/projects">Open Studio</a></div></header>';
-  if (f) f.outerHTML = '<footer><div class="w"><a href="' + b + 'guides/getting-started.html">Quick start</a>' +
-    '<a href="' + b + 'pages/standards.html">Standards</a><a href="' + b + 'pages/about.html">About</a>' +
-    '<a href="' + b + 'pages/contact.html">Contact</a><span class="r">© LuxScale · Short Circuit Company</span></div></footer>';
+    '<nav id="nav" aria-label="Main">' + links + '<a class="btn nav-studio" data-studio href="' + studio + '">Open Studio</a></nav>' +
+    '<div class="hd-actions"><button id="lang" class="ic" type="button" aria-label="Switch language">AR</button>' +
+    '<button id="theme" type="button" aria-label="Toggle theme">◐</button>' +
+    '<a class="btn hd-studio" data-studio href="' + studio + '">Open Studio</a>' +
+    '<button id="menu" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav">☰</button></div></div></header>';
+  if (f) f.outerHTML = '<footer><div class="w"><span>© LuxScale</span><a href="https://shortcircuit.company">Short Circuit Company</a></div></footer>';
+  var hd = document.getElementById('top-bar'), mb = document.getElementById('menu');
+  if (hd && mb) {
+    function set(o) { hd.classList.toggle('open', o); mb.setAttribute('aria-expanded', o); }
+    mb.addEventListener('click', function () { set(!hd.classList.contains('open')); });
+    hd.querySelectorAll('nav a').forEach(function (a) { a.addEventListener('click', function () { set(false); }); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') set(false); });
+    document.addEventListener('click', function (e) { if (!hd.contains(e.target)) set(false); });
+  }
 })();

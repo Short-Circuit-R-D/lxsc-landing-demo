@@ -6,7 +6,8 @@
   var input = document.getElementById('vid'), stream = null, timer = null, zx = null, busy = false;
   var reduce = matchMedia('(prefers-reduced-motion:reduce)').matches;
   function set(s) { card.dataset.state = s; }
-  function say(t) { msg.textContent = t || ''; }
+  function T(s) { return window.LX_t ? window.LX_t(s) : s; }
+  function say(t) { msg.textContent = t ? T(t) : ''; }
   function stopCam() {
     clearInterval(timer); timer = null;
     if (zx) { try { zx.reset(); } catch (e) {} zx = null; }
@@ -46,10 +47,10 @@
       var url = (C.reportPage || '').replace('{id}', enc);
       if (!/^(https?:\/\/|\/)/.test(url)) {   /* no report page configured: never navigate (an empty link would reload this page) */
         open.hidden = true;
-        note.textContent = C.mock ? 'Demo mode: set verify.reportPage in js/config.js to open the report.' : 'The report page is not set up yet.';
+        note.textContent = T(C.mock ? 'Demo mode: set verify.reportPage in js/config.js to open the report.' : 'The report page is not set up yet.');
         return set('ok');
       }
-      open.hidden = false; open.href = url; note.textContent = 'Report found. Opening it now…';
+      open.hidden = false; open.href = url; note.textContent = T('Report found. Opening it now…');
       set('ok');
       setTimeout(function () { if (card.dataset.state === 'ok') location.href = url; }, reduce ? 600 : 1800);
     }).catch(function () { busy = false; set('err'); });

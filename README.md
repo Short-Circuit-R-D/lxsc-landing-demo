@@ -5,31 +5,24 @@ Open `index.html` in a browser, or serve the folder with any static server. No b
 ```
 luxscale-site/
 ├── index.html
-├── css/
-│   ├── tokens.css        brand colours, gradient, fonts, light/dark themes
-│   ├── base.css          reset, page defaults, .w wrapper
-│   ├── header.css        header, logo swap, buttons, theme toggle
-│   ├── hero.css          hero
-│   ├── path.css          section basics + "Four steps" guided path
-│   ├── fixtures.css      "Use your own fixtures" + polar diagram
-│   ├── reports.css       "A report you can hand over"
-│   ├── verify.css        "Verify a report" scanner card
-│   ├── final-footer.css  closing call to action + footer
-│   ├── responsive.css    mobile / tablet
-│   └── motion.css        reduced-motion rules
+├── css/                  tokens, base, header, hero, path (pinned scroll section), fixtures, reports,
+│                         verify, final-footer, pages, responsive, rtl (Arabic), motion
 ├── js/
-│   ├── config.js         Studio URL, future API endpoints (edit here)
-│   ├── i18n.js           language scaffold (English only for now)
-│   ├── hero-pattern.js   static brand pattern in the hero
-│   ├── guided-path.js    scroll-driven steps and stage
+│   ├── layout.js         shared header (nav, EN/AR, theme, menu) and footer for EVERY page
+│   ├── config.js         Studio URL, report verification API, contact settings
+│   ├── lang-ar.js        Arabic (Modern Standard) strings, keyed by the English text
+│   ├── i18n.js           EN / AR switch (saves the choice, flips to right-to-left)
+│   ├── hero-pattern.js   moving light on the brand pattern
+│   ├── guided-path.js    pinned scroll section: text and illustration change together
+│   ├── reveal.js         triggers fixtures, report and closing animations
 │   ├── verify.js         report scanner, API check, result states
-│   ├── reveal.js         triggers the fixtures, report and closing animations
+│   ├── contact.js        contact form
 │   └── theme.js          light/dark toggle
 ├── assets/
 │   ├── logo/             PUT YOUR LOGO FILES HERE (see assets/logo/README.md)
 │   └── img/              other images
 ├── guides/getting-started.html   Quick start
-├── pages/                standards, about, contact
+├── pages/                features, standards, verify, about, contact
 └── 404.html
 ```
 
@@ -50,3 +43,18 @@ luxscale-site/
 - The step illustrations and the polar diagram are inline SVG in `index.html`, animated by `css/path.css` and `css/fixtures.css`. The logo is not drawn anywhere.
 
 - **Verify a report:** `js/verify.js` + `js/config.js` (`verify`). It starts in demo mode (`mock:true`: `public-demo`, `private-demo`, any other ID = not found). Set `verify.api`, `verify.reportPage` and `mock:false` for real use. Camera needs HTTPS or localhost.
+
+## Link preview (WhatsApp, Facebook, X, LinkedIn)
+
+Called **Open Graph** tags. They are inside `<!-- share-tags -->` in the head of every page.
+
+- Put the preview image at `assets/img/og-image.png`: **1200 × 630 px**, under 300 KB (WhatsApp ignores heavy images). It is the logo on a plain brand background.
+- Put a 180 × 180 px `assets/img/apple-touch-icon.png` for phone home screens.
+- The tags assume the site lives at `https://lxscale.com/`. If the domain differs, replace it in every page.
+- Messengers cache previews. After changing them, refresh with Facebook's Sharing Debugger; WhatsApp may take a while or need a link with `?v=2`.
+
+## Navigation and language
+
+- The header (links, EN/AR button, theme, menu on phones) is built once in `js/layout.js`. Add a page by adding one line to its `nav` list.
+- Every page loads `js/lang-ar.js` and `js/i18n.js`. To translate new text, add `"English text": "النص العربي"` to `js/lang-ar.js` (the key is the exact English text on the page). Untranslated text stays in English.
+- Studio button names (NEW PROJECT, WIZARD, ...) stay in English on purpose because that is how they appear in Studio.

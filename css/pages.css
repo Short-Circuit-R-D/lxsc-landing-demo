@@ -10,7 +10,7 @@ nav a[aria-current]{color:var(--ink);font-weight:600}
 .glance a{display:block;border:1px solid var(--line);border-radius:99px;padding:6px 16px;font-size:14px;text-decoration:none;color:var(--mute);transition:border-color .2s,color .2s}
 .glance a:hover{border-color:var(--orange);color:var(--ink)}
 ol.st{list-style:none;padding:0;margin:0;counter-reset:s}
-ol.st>li{counter-increment:s;position:relative;padding:0 0 44px 64px}
+ol.st>li{counter-increment:s;position:relative;padding:0 0 44px;padding-inline-start:64px}
 ol.st>li::before{content:counter(s);position:absolute;inset-inline-start:0;top:0;width:40px;height:40px;border-radius:50%;background:var(--surf);border:1px solid var(--line);display:grid;place-items:center;font:500 15px var(--mono)}
 ol.st>li::after{content:"";position:absolute;inset-inline-start:19px;top:48px;bottom:8px;width:2px;background:var(--line)}
 ol.st>li:last-child::after{display:none}
@@ -18,7 +18,7 @@ ol.st h3{font-size:22px;font-weight:500;margin:6px 0 8px;letter-spacing:-.01em}
 ol.st p{margin:0 0 10px;color:var(--mute);max-width:56ch}
 .ui{display:inline-block;font:500 12px var(--mono);padding:3px 10px;border-radius:4px;border:1px solid var(--line);background:var(--surf);white-space:nowrap}
 .ui.o{background:var(--orange);border-color:var(--orange);color:#131d20}.ui.r{background:var(--red);border-color:var(--red);color:#f5f1ef}
-.note{border-inline-start:3px solid var(--blue);background:var(--surf);padding:16px 20px;border-radius:0 8px 8px 0;margin:24px 0;color:var(--ink)}
+.note{border-inline-start:3px solid var(--blue);background:var(--surf);padding:16px 20px;border-start-end-radius:8px;border-end-end-radius:8px;margin:24px 0;color:var(--ink)}
 .dl{display:grid;gap:0;margin:20px 0}.dl div{padding:16px 0;border-top:1px solid var(--line)}.dl div:last-child{border-bottom:1px solid var(--line)}
 .dl b{display:block;margin-bottom:2px}.dl span{color:var(--mute)}
 .cta-row{margin-top:56px;display:flex;gap:14px;flex-wrap:wrap}
@@ -29,3 +29,9 @@ form.f textarea{min-height:150px;resize:vertical}
 form.f button{justify-self:start;cursor:pointer;font:inherit}
 #form-msg{min-height:1.5em;color:var(--mute)}
 .nf{text-align:center;padding:clamp(96px,14vw,180px) 0}.nf h1{margin:0 auto 20px}.nf p{color:var(--mute);margin-bottom:28px}
+.fg{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.fc{border:1px solid var(--line);border-top:3px solid var(--ink);border-radius:12px;padding:24px;background:var(--surf)}
+.fc:nth-child(3n+2){border-top-color:var(--orange)}.fc:nth-child(3n){border-top-color:var(--blue)}
+.fc h3{font-size:20px;font-weight:600;margin-bottom:8px}.fc p{color:var(--mute);font-size:16px}.fc a{display:inline-block;margin-top:10px;color:var(--ink)}
+.vpage .vcard{justify-self:center;margin:0 auto;max-width:640px}.vpage .vview{aspect-ratio:16/10}
+.vpage .vinfo{margin:56px auto 0}

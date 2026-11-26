@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Verify a report – LuxScale</title>
+<!-- share-tags -->
+<meta name="description" content="Scan a LuxScale report code or type its project ID to confirm the report is real.">
+<meta name="theme-color" content="#131d20">
+<link rel="canonical" href="https://lxscale.com/pages/verify.html">
+<link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="LuxScale">
+<meta property="og:title" content="Verify a report – LuxScale">
+<meta property="og:description" content="Scan a LuxScale report code or type its project ID to confirm the report is real.">
+<meta property="og:url" content="https://lxscale.com/pages/verify.html">
+<meta property="og:image" content="https://lxscale.com/assets/img/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="LuxScale logo">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Verify a report – LuxScale">
+<meta name="twitter:description" content="Scan a LuxScale report code or type its project ID to confirm the report is real.">
+<meta name="twitter:image" content="https://lxscale.com/assets/img/og-image.png">
+<!-- /share-tags -->
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" href="../assets/logo/favicon.svg">
+<link rel="stylesheet" href="../css/tokens.css">
+<link rel="stylesheet" href="../css/base.css">
+<link rel="stylesheet" href="../css/header.css">
+<link rel="stylesheet" href="../css/final-footer.css">
+<link rel="stylesheet" href="../css/verify.css">
+<link rel="stylesheet" href="../css/pages.css">
+<link rel="stylesheet" href="../css/responsive.css">
+<link rel="stylesheet" href="../css/rtl.css">
+<link rel="stylesheet" href="../css/motion.css">
+</head>
+<body data-base="../" data-page="verify">
+<div id="site-header"></div>
+<main>
+<div class="ph"><div class="w"><h1>Verify a report</h1><p class="lead">Scan the code on a LuxScale report, or type its project ID, to confirm that it is real.</p></div></div>
+<div class="pg vpage"><div class="w">
+<div class="vcard" id="vcard" data-state="idle">
+<div class="vview"><video id="vvideo" playsinline muted></video>
+<div class="vframe"><i></i><i></i><i></i><i></i><span class="vline"></span></div><p class="vhint">Point the camera at the code</p>
+<div class="vres r-checking"><div class="spin"></div><h3>Checking the report…</h3></div>
+<div class="vres r-ok"><svg viewBox="0 0 100 100" aria-hidden="true"><circle class="dr" pathLength="1" cx="50" cy="50" r="40" stroke="#3ab1d4"/><path class="dr d2" pathLength="1" d="M30 52l14 14 27-30" stroke="#f7de65"/></svg><h3>Validated</h3><p id="vokmsg">Report found. Opening it now…</p><a class="btn" id="vopen" href="#">Open report</a></div>
+<div class="vres r-locked"><span class="vbadge">Validated</span><svg viewBox="0 0 100 100" aria-hidden="true"><rect x="26" y="46" width="48" height="36" rx="6" fill="#f7de65"/><path class="shackle" d="M36 46V34a14 14 0 0128 0v12" fill="none" stroke="#f7de65" stroke-width="6" stroke-linecap="round"/><circle cx="50" cy="63" r="4.5" fill="#0e1618"/></svg><h3>Report data is protected</h3><p>This report is private. Only its owner can view the data.</p><div class="vbtns"><a class="btn" id="vsign" data-studio href="https://studio.lxscale.com/projects">Sign in to view</a><button class="btn ghost" data-vreset type="button">Scan another</button></div></div>
+<div class="vres r-none"><svg viewBox="0 0 120 130" aria-hidden="true"><g class="sad"><circle cx="60" cy="62" r="44" fill="none" stroke="#4c7480" stroke-width="5"/><circle cx="45" cy="54" r="4.5" fill="#f5f1ef"/><circle cx="75" cy="54" r="4.5" fill="#f5f1ef"/><path d="M35 46l17-7M85 46l-17-7" stroke="#f5f1ef" stroke-width="4" stroke-linecap="round"/><path d="M44 86q16-16 32 0" fill="none" stroke="#f5f1ef" stroke-width="4.5" stroke-linecap="round"/><path class="tear" d="M45 61c-4 6-5 9-5 11a5 5 0 0010 0c0-2-1-5-5-11z" fill="#3ab1d4"/></g></svg><h3>Report not found</h3><p>We could not find a report with that ID. Check it and try again.</p><button class="btn ghost" data-vreset type="button">Try again</button></div>
+<div class="vres r-err"><h3>Could not check the report</h3><p>The verification service did not answer. Please try again.</p><button class="btn ghost" data-vreset type="button">Try again</button></div>
+</div>
+<div class="vctl"><button class="btn" id="vscan" type="button">Scan code</button>
+<form id="vform"><input id="vid" name="id" placeholder="Or type the project ID" autocomplete="off" aria-label="Project ID" maxlength="64"><button class="btn ghost" type="submit">Check</button></form></div>
+<p id="vmsg" role="status"></p><p id="vdemo" class="note" hidden>Demo mode. Try <b>public-demo</b>, <b>private-demo</b>, or any other ID.</p>
+</div>
+<div class="prose vinfo"><h2>What you will see</h2>
+<div class="dl"><div><b>A public report</b><span>It is validated and opens straight away.</span></div><div><b>A private report</b><span>It is validated, but its data stays protected. Only its owner can view it.</span></div><div><b>An unknown ID</b><span>We could not find a report with that ID.</span></div></div></div>
+</div></div></main>
+<div id="site-footer"></div>
+<script src="../js/layout.js"></script>
+<script src="../js/config.js"></script>
+<script src="../js/lang-ar.js"></script>
+<script src="../js/i18n.js"></script>
+<script src="../js/theme.js"></script>
+<script src="../js/verify.js"></script>
+</body></html>

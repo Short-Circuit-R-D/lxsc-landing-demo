@@ -4,8 +4,29 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>LuxScale Studio – light the room before you build it</title>
+<!-- share-tags -->
+<meta name="description" content="Draw or import your DWG, follow the guided steps, and get a lighting study checked against EN 12464-1.">
+<meta name="theme-color" content="#131d20">
+<link rel="canonical" href="https://lxscale.com/">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="LuxScale">
+<meta property="og:title" content="LuxScale Studio – light the room before you build it">
+<meta property="og:description" content="Draw or import your DWG, follow the guided steps, and get a lighting study checked against EN 12464-1.">
+<meta property="og:url" content="https://lxscale.com/">
+<meta property="og:image" content="https://lxscale.com/assets/img/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="LuxScale logo">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="LuxScale Studio – light the room before you build it">
+<meta name="twitter:description" content="Draw or import your DWG, follow the guided steps, and get a lighting study checked against EN 12464-1.">
+<meta name="twitter:image" content="https://lxscale.com/assets/img/og-image.png">
+<!-- /share-tags -->
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="icon" href="assets/logo/favicon.svg">
 <link rel="stylesheet" href="css/tokens.css">
 <link rel="stylesheet" href="css/base.css">
@@ -14,55 +35,29 @@
 <link rel="stylesheet" href="css/path.css">
 <link rel="stylesheet" href="css/fixtures.css">
 <link rel="stylesheet" href="css/reports.css">
-<link rel="stylesheet" href="css/verify.css">
 <link rel="stylesheet" href="css/final-footer.css">
+<link rel="stylesheet" href="css/pages.css">
 <link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="css/rtl.css">
 <link rel="stylesheet" href="css/motion.css">
 </head>
-<body>
-<header><div class="w">
-<a class="logo" href="#top" aria-label="LuxScale home">
-<img class="logo-light" src="assets/logo/lxscale_logo_light.svg" alt="lxscale">
-<img class="logo-dark" src="assets/logo/lxscale_logo_dark.svg" alt="" aria-hidden="true">
-</a>
-<nav aria-label="Main"><a href="#verify">Verify</a><a href="#path" data-i18n="nav.path">Guided path</a><a href="#fixtures" data-i18n="nav.fix">Your fixtures</a><a href="#reports" data-i18n="nav.rep">Reports</a><a href="guides/getting-started.html" data-i18n="nav.guides">Guides</a></nav>
-<button id="theme" aria-label="Toggle theme">◐</button>
-<a class="btn" href="https://studio.lxscale.com/projects" data-studio data-i18n="cta.open">Open Studio</a>
-</div></header>
+<body data-base="" data-page="home">
+<div id="site-header"></div>
 <main id="top">
 <div class="hero"><canvas id="cv" aria-hidden="true"></canvas><div class="w">
-<h1 class="rise" style="animation-delay:.4s" data-i18n="hero.h">Light the room before you build it.</h1>
-<p class="rise" style="animation-delay:.7s" data-i18n="hero.p">Draw it or import your DWG, follow the guided steps, and get a study checked against EN 12464-1.</p>
-<div class="cta rise" style="animation-delay:1s"><a class="btn big" href="https://studio.lxscale.com/projects" data-studio data-i18n="cta.open">Open Studio</a><a class="btn big ghost" href="#path" data-i18n="cta.path">See the guided path</a><a class="btn big ghost" href="#verify">Verify a report</a></div>
+<h1 class="rise" style="animation-delay:.4s">Light the room before you build it.</h1>
+<p class="rise" style="animation-delay:.7s">Draw it or import your DWG, follow the guided steps, and get a study checked against EN 12464-1.</p>
+<div class="cta rise" style="animation-delay:1s"><a class="btn big" href="#path">Learn more</a></div>
 </div></div>
 
-<section id="verify"><div class="w two">
-<div><h2 data-i18n="ver.h">Verify a report in seconds</h2>
-<p class="sub">Every LuxScale report carries a project ID. Scan its code with your camera, or type the ID, to confirm the report is real.</p>
-<p class="sub">Public reports open straight away. Private reports stay protected.</p></div>
-<div class="vcard" id="vcard" data-state="idle">
-<div class="vview"><video id="vvideo" playsinline muted></video>
-<div class="vframe"><i></i><i></i><i></i><i></i><span class="vline"></span></div><p class="vhint">Point the camera at the code</p>
-<div class="vres r-checking"><div class="spin"></div><h3>Checking the report…</h3></div>
-<div class="vres r-ok"><svg viewBox="0 0 100 100" aria-hidden="true"><circle class="dr" pathLength="1" cx="50" cy="50" r="40" stroke="#3ab1d4"/><path class="dr d2" pathLength="1" d="M30 52l14 14 27-30" stroke="#f7de65"/></svg><h3>Validated</h3><p id="vokmsg">Report found. Opening it now…</p><a class="btn" id="vopen" href="#">Open report</a></div>
-<div class="vres r-locked"><span class="vbadge">Validated</span><svg viewBox="0 0 100 100" aria-hidden="true"><rect x="26" y="46" width="48" height="36" rx="6" fill="#f7de65"/><path class="shackle" d="M36 46V34a14 14 0 0128 0v12" fill="none" stroke="#f7de65" stroke-width="6" stroke-linecap="round"/><circle cx="50" cy="63" r="4.5" fill="#0e1618"/></svg><h3>Report data is protected</h3><p>This report is private. Only its owner can view the data.</p><div class="vbtns"><a class="btn" id="vsign" data-studio href="https://studio.lxscale.com/projects">Sign in to view</a><button class="btn ghost" data-vreset type="button">Scan another</button></div></div>
-<div class="vres r-none"><svg viewBox="0 0 120 130" aria-hidden="true"><g class="sad"><circle cx="60" cy="62" r="44" fill="none" stroke="#4c7480" stroke-width="5"/><circle cx="45" cy="54" r="4.5" fill="#f5f1ef"/><circle cx="75" cy="54" r="4.5" fill="#f5f1ef"/><path d="M35 46l17-7M85 46l-17-7" stroke="#f5f1ef" stroke-width="4" stroke-linecap="round"/><path d="M44 86q16-16 32 0" fill="none" stroke="#f5f1ef" stroke-width="4.5" stroke-linecap="round"/><path class="tear" d="M45 61c-4 6-5 9-5 11a5 5 0 0010 0c0-2-1-5-5-11z" fill="#3ab1d4"/></g></svg><h3>Report not found</h3><p>We could not find a report with that ID. Check it and try again.</p><button class="btn ghost" data-vreset type="button">Try again</button></div>
-<div class="vres r-err"><h3>Could not check the report</h3><p>The verification service did not answer. Please try again.</p><button class="btn ghost" data-vreset type="button">Try again</button></div>
-</div>
-<div class="vctl"><button class="btn" id="vscan" type="button">Scan code</button>
-<form id="vform"><input id="vid" name="id" placeholder="Or type the project ID" autocomplete="off" aria-label="Project ID" maxlength="64"><button class="btn ghost" type="submit">Check</button></form></div>
-<p id="vmsg" role="status"></p><p id="vdemo" class="note" hidden>Demo mode. Try <b>public-demo</b>, <b>private-demo</b>, or any other ID.</p>
-</div></div></section>
-
-<section id="path"><div class="w">
-<h2 data-i18n="path.h">Four steps from plan to report</h2><p class="sub" data-i18n="path.p">Studio asks one thing at a time, so a first study never starts from a blank screen.</p>
-<div class="path">
-<div class="col">
+<section id="path" class="scrolly" style="--n:4"><div class="sk"><div class="w">
+<div><h2>Four steps from plan to report</h2><p class="sub">Studio asks one thing at a time, so a first study never starts from a blank screen.</p></div>
+<div class="sg"><div><div class="sp">
 <article data-s="0" class="on"><div class="n">Step 1</div><h3>Bring your plan, or type the room</h3><p>Upload a DWG or DXF, let Studio detect the rooms and confirm the unit scale. No drawing? Enter the shape and dimensions by hand.</p></article>
 <article data-s="1"><div class="n">Step 2</div><h3>Follow the standard, or set your own</h3><p>Pick the standard and the targets fill in for you. Designing to your own brief? Set the targets yourself.</p></article>
 <article data-s="2"><div class="n">Step 3</div><h3>Set heights for every fixture</h3><p>Give the ceiling height and the mounting height for each fixture, and place them by hand or let the engine propose a layout.</p></article>
 <article data-s="3"><div class="n">Step 4</div><h3>Review, calculate, report</h3><p>Edit any step, run the calculation, and read the result on the page. Export the same report as a PDF.</p></article>
-</div>
+</div><div class="dots"><button type="button" aria-label="Step 1" class="on"></button><button type="button" aria-label="Step 2"></button><button type="button" aria-label="Step 3"></button><button type="button" aria-label="Step 4"></button></div></div>
 <div class="stage" data-a="-1" aria-hidden="true"><svg viewBox="0 0 400 300">
 <defs><linearGradient id="gr"><stop offset="0" stop-color="#f47937"/><stop offset=".27" stop-color="#f7de65"/><stop offset=".47" stop-color="#fbf3cf"/><stop offset="1" stop-color="#3ab1d4"/></linearGradient><linearGradient id="gv" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f7de65" stop-opacity=".95"/><stop offset="1" stop-color="#3ab1d4" stop-opacity=".25"/></linearGradient></defs>
 <g class="sc s0"><text class="tm" x="70" y="62">.dwg · .dxf</text><path class="ln draw" d="M70 80H250V150H330V230H70Z"/><text class="tx" x="90" y="190">Rooms detected</text></g>
@@ -77,7 +72,7 @@
 <path class="ln tick t2" d="M135 140l9 9 17-19" style="stroke:#3ab1d4"/><rect x="175" y="136" width="70" height="8" rx="4" fill="#e1d7d0"/>
 <path class="ln tick t3" d="M135 180l9 9 17-19" style="stroke:#3ab1d4"/><rect x="175" y="176" width="80" height="8" rx="4" fill="#e1d7d0"/>
 <text class="tm" x="135" y="244" style="fill:#4c7480">On the page · PDF</text></g>
-</svg></div>
+</svg></div></div>
 </div></div></section>
 
 <section id="fixtures" class="dark"><div class="w two">
@@ -100,12 +95,13 @@
 
 <section class="dark final"><div class="w"><h2 data-i18n="end.h">Your room is waiting.</h2><a class="btn big" href="https://studio.lxscale.com/projects" data-studio data-i18n="cta.open">Open Studio</a><div class="sweep" id="sweep"></div></div></section>
 </main>
-<footer><div class="w"><a href="guides/getting-started.html">Guides</a><a href="pages/standards.html">Standards</a><a href="pages/about.html">About</a><a href="pages/contact.html">Contact</a><span class="r">© LuxScale</span></div></footer>
+<div id="site-footer"></div>
+<script src="js/layout.js"></script>
 <script src="js/config.js"></script>
+<script src="js/lang-ar.js"></script>
 <script src="js/i18n.js"></script>
 <script src="js/hero-pattern.js"></script>
 <script src="js/guided-path.js"></script>
 <script src="js/reveal.js"></script>
 <script src="js/theme.js"></script>
-<script src="js/verify.js"></script>
 </body></html>

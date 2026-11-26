@@ -1,24 +1,31 @@
-/* Guided path scroll spy: the active step is the last one whose top has passed an anchor line.
-   Desktop anchor = 45% of the viewport; mobile anchor = just under the sticky illustration. */
+/* Guided path: a pinned, scroll-driven section.
+   The text and the illustration are one unit, so they always change together. */
 (function () {
-  var stage = document.querySelector('.stage'), sec = document.getElementById('path');
-  var arts = [].slice.call(document.querySelectorAll('.path article'));
-  if (!stage || !sec || !arts.length) return;
-  var mq = matchMedia('(max-width:860px)'), last = null, queued = false;
+  var sec = document.getElementById('path'), stage = sec && sec.querySelector('.stage');
+  if (!sec || !stage) return;
+  var arts = [].slice.call(sec.querySelectorAll('.sp article')), dots = [].slice.call(sec.querySelectorAll('.dots button'));
+  var n = arts.length, lastT = null, lastS = null, queued = false;
+  function span() { return Math.max(1, sec.offsetHeight - innerHeight); }
   function update() {
     queued = false;
-    var vh = innerHeight, sr = sec.getBoundingClientRect(), idx = -1;
-    if (sr.top < vh * .75 && sr.bottom > 0) {
-      var anchor = mq.matches ? stage.getBoundingClientRect().bottom + 48 : vh * .45;
-      idx = 0;
-      arts.forEach(function (a, i) { if (a.getBoundingClientRect().top <= anchor) idx = i; });
+    var r = sec.getBoundingClientRect(), vh = innerHeight;
+    var p = Math.min(.999, Math.max(0, -r.top / span()));
+    var t = Math.min(n - 1, Math.floor(p * n));                 /* current step */
+    var s = r.top < vh * .4 ? t : -1;                            /* illustration starts when the section fills the screen */
+    if (t !== lastT) {
+      lastT = t;
+      arts.forEach(function (a, i) { a.classList.toggle('on', i === t); a.classList.toggle('past', i < t); });
+      dots.forEach(function (d, i) { d.classList.toggle('on', i === t); });
     }
-    if (idx === last) return;
-    last = idx;
-    stage.dataset.a = idx;
-    arts.forEach(function (a, i) { a.classList.toggle('on', i === idx); });
+    if (s !== lastS) { lastS = s; stage.dataset.a = s; }
   }
   function req() { if (!queued) { queued = true; requestAnimationFrame(update); } }
+  dots.forEach(function (d, i) {
+    d.addEventListener('click', function () {
+      var top = sec.getBoundingClientRect().top + scrollY;
+      scrollTo({ top: top + (i + .5) / n * span(), behavior: 'smooth' });
+    });
+  });
   addEventListener('scroll', req, { passive: true });
   addEventListener('resize', req);
   update();

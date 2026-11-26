@@ -2,12 +2,23 @@
 header{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
 header .w{display:flex;align-items:center;gap:26px;height:64px}
 .logo{display:flex;align-items:center;gap:10px;font-weight:500;font-size:22px;text-decoration:none;letter-spacing:-.01em}.logo img{height:34px;width:auto;display:block}
-nav{display:flex;gap:22px;margin-inline-start:auto;font-size:15px}nav a{text-decoration:none;color:var(--mute)}nav a:hover{color:var(--ink)}
+nav{display:flex;align-items:center;gap:20px;margin-inline-start:auto;font-size:15px}nav a{text-decoration:none;color:var(--mute)}nav a:hover{color:var(--ink)}
 .btn{display:inline-block;padding:12px 22px;border-radius:6px;font-weight:600;font-size:16px;text-decoration:none;background:var(--orange);color:#131d20;border:1px solid var(--orange);transition:transform .2s,background .2s}
 .btn:hover{background:var(--yellow);border-color:var(--yellow);transform:translateY(-2px)}
 .btn.big{padding:16px 32px;font-size:18px}.btn.ghost{background:none;color:inherit;border-color:currentColor;opacity:.85}
-#theme{background:none;border:1px solid var(--line);border-radius:6px;color:var(--ink);width:38px;height:38px;cursor:pointer}
+#lang,#menu,#theme{background:none;border:1px solid var(--line);border-radius:6px;color:var(--ink);width:38px;height:38px;cursor:pointer}
 /* logo swap: light logo on light theme, dark logo on dark theme */
 .logo .logo-dark{display:none}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .logo .logo-light{display:none}:root:not([data-theme="light"]) .logo .logo-dark{display:block}}
 :root[data-theme="dark"] .logo .logo-light{display:none}:root[data-theme="dark"] .logo .logo-dark{display:block}
+.hd-actions{display:flex;align-items:center;gap:10px}
+#lang{font:600 13px var(--mono)}
+#menu{display:none}.nav-studio{display:none}
+@media (max-width:980px){
+#menu{display:block}
+nav{display:none;position:absolute;inset:100% 0 auto 0;flex-direction:column;align-items:stretch;gap:0;background:var(--bg);border-bottom:1px solid var(--line);padding:6px 24px 20px;margin:0}
+header.open nav{display:flex}
+nav a:not(.btn){padding:14px 0;font-size:17px;border-bottom:1px solid var(--line)}
+.hd-actions{margin-inline-start:auto}
+}
+@media (max-width:520px){.hd-studio{display:none}.nav-studio{display:block;margin-top:18px;text-align:center}}
